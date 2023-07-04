@@ -21,6 +21,12 @@
     [Duration]                NUMERIC (18, 2) NULL,
     [EnrollmentStartDate]     DATE            CONSTRAINT [DF_Contacts_EnrollmentStartDate] DEFAULT (getdate()) NULL,
     [DOB]                     DATE            NULL,
-    [Channel]                 NVARCHAR (255)  NULL
+    [Channel]                 NVARCHAR (255)  NULL,
+    [SFProgramName]           NVARCHAR (255)  NULL,
+    [SFProgramCode]           NVARCHAR (255)  NULL,
+    [CreatedDate]             DATETIME        CONSTRAINT [DF_Contacts_DateCreated] DEFAULT (getdate()) NULL,
+    [Supported]               BIT             NULL
 );
+
+
 

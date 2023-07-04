@@ -14,6 +14,9 @@
     [Score]                   VARCHAR (50) NULL,
     [ExamResult]              VARCHAR (50) NULL,
     [CetificationNumAwarded]  VARCHAR (50) NULL,
-    [DataCurrentAsOf]         VARCHAR (50) NULL
+    [DataCurrentAsOf]         VARCHAR (50) NULL,
+    [status]                  VARCHAR (50) NULL
 );
+
+
 

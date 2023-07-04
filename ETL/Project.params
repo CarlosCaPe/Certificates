@@ -147,4 +147,67 @@
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="Path_NHAPracticeTest_ErrorFiles">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{8ded5163-71f7-4bb0-b73e-2996f96a4066}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Practice Test\ErrorFiles</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="Path_NHAPracticeTest_LoadFiles">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{6f379f2a-7ae6-4c4b-ba32-f5be5c56ff54}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Practice Test\LoadFiles</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="File_NHAPracticeTest_Generic">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{95d9bdb3-6090-48f8-a10f-e42a9af6cacf}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">PracticeExams_*.csv</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
 </SSIS:Parameters>

@@ -1,13 +1,15 @@
 ﻿
 
---SELECT * FROM ETL.NHA_Certification_Exam  WHERE FirstName = 'Maria' AND LastName =  'Smith' AND StudentEmail = 'msmith4237@gmail.com' AND PlannedExamDate = '06/09/2022' AND NHAExamRegistrationDate = '06/02/2022' AND ActualExamDate = '06/09/2022' AND ApprovalDate = '06/06/2022'
---SELECT FirstName,LastName,CertProduct,StudentEmail,PlannedExamDate,NHAExamRegistrationDate,ActualExamDate,ApprovalDate FROM  ETL.NHA_Certification_Exam GROUP BY FirstName,LastName,StudentEmail,CertProduct,PlannedExamDate,NHAExamRegistrationDate,ActualExamDate,ApprovalDate HAVING COUNT(*) > 1
+
+
+--SELECT * FROM ETL.NHA_Certification_Exam  WHERE FirstName = 'Ajenea' AND LastName =  'Rousseau' AND StudentEmail = 'ajenea.rousseau2@gmail.com' AND CertProduct = 'CPT' AND Status = 'exam_completed' and ExamResult = 'Fail'
+--SELECT FirstName,LastName,CertProduct,StudentEmail,Status,ExamResult,ActualExamDate FROM  ETL.NHA_Certification_Exam GROUP BY FirstName,LastName,CertProduct,StudentEmail,Status,ExamResult,ActualExamDate HAVING COUNT(*) > 1
 --DELETE FROM dwh.NHA_Certification_Exam
 --[etl].[sp_NHA_Certification_Exam_Merge]  ''
 
 
 
-CREATE PROCEDURE [etl].[sp_NHA_Certification_Exam_Merge]  
+CREATE PROCEDURE [etl].[sp_NHA_Certification_Exam_Merge] -- 'test'
 @FileName VARCHAR(50)
 AS
 BEGIN
@@ -28,22 +30,24 @@ BEGIN
                TARGET.FirstName = SOURCE.FirstName
                AND TARGET.LastName = SOURCE.LastName
                AND TARGET.StudentEmail = SOURCE.StudentEmail
-               AND TARGET.NHAExamRegistrationDate = SOURCE.NHAExamRegistrationDate
-               AND TARGET.PlannedExamDate = SOURCE.PlannedExamDate
-               AND TARGET.ActualExamDate = SOURCE.ActualExamDate
-               AND TARGET.ApprovalDate = SOURCE.ApprovalDate
-               AND TARGET.Score = SOURCE.Score
 			   AND TARGET.CertProduct = SOURCE.CertProduct
+			   AND TARGET.Status = SOURCE.Status
+			   and TARGET.ExamResult = SOURCE.ExamResult
+			   and TARGET.ActualExamDate = SOURCE.ActualExamDate
+
            )
         WHEN MATCHED THEN
             UPDATE SET TARGET.Institution = SOURCE.Institution,
                        TARGET.ProductNumber = SOURCE.ProductNumber,
                        TARGET.ExamOrderTaken = SOURCE.ExamOrderTaken,
                        TARGET.ModeofTesting = SOURCE.ModeofTesting,
-                       TARGET.ExamResult = SOURCE.ExamResult,
                        TARGET.CetificationNumAwarded = SOURCE.CetificationNumAwarded,
                        TARGET.DataCurrentAsOf = SOURCE.DataCurrentAsOf,
                        TARGET.ModifiedBy = 'System',
+					   TARGET.NHAExamRegistrationDate = SOURCE.NHAExamRegistrationDate,
+					   TARGET.PlannedExamDate = SOURCE.PlannedExamDate,
+					   TARGET.ApprovalDate = SOURCE.ApprovalDate,
+					   TARGET.Score = SOURCE.Score,
                        TARGET.ModifiedOn = GETDATE()
         WHEN NOT MATCHED BY TARGET THEN
             INSERT
@@ -64,6 +68,7 @@ BEGIN
                 ExamResult,
                 CetificationNumAwarded,
                 DataCurrentAsOf,
+				status,
                 ModifiedBy,
                 ModifiedOn
             )
@@ -71,7 +76,7 @@ BEGIN
             (SOURCE.FirstName, SOURCE.LastName, SOURCE.StudentEmail, SOURCE.Institution, SOURCE.CertProduct,
              SOURCE.ProductNumber, SOURCE.NHAExamRegistrationDate, SOURCE.ExamOrderTaken, SOURCE.ModeofTesting,
              SOURCE.ApprovalDate, SOURCE.PlannedExamDate, SOURCE.ActualExamDate, SOURCE.Score, SOURCE.ExamResult,
-             SOURCE.CetificationNumAwarded, SOURCE.DataCurrentAsOf, 'System', GETDATE())
+             SOURCE.CetificationNumAwarded, SOURCE.DataCurrentAsOf,isnull(SOURCE.status,''), 'System', GETDATE())
         OUTPUT $action,
                GETDATE(),
                CURRENT_USER

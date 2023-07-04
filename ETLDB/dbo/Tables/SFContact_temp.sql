@@ -9,6 +9,10 @@
     [LeadID]             INT             NULL,
     [ProgramDescription] NVARCHAR (500)  NULL,
     [AccountID]          NVARCHAR (500)  NULL,
-    [Channel]            NVARCHAR (500)  NULL
+    [Channel]            NVARCHAR (500)  NULL,
+    [SFProgramCode]      NVARCHAR (500)  NULL,
+    [Supported]          BIT             NULL
 );
+
+
 

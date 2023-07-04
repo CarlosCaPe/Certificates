@@ -66,6 +66,7 @@
     <Folder Include="dwh\" />
     <Folder Include="dwh\Tables\" />
     <Folder Include="etl\Stored Procedures\" />
+    <Folder Include="dwh\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\SFContactImportError.sql" />
@@ -88,5 +89,20 @@
     <Build Include="Security\dwh.sql" />
     <Build Include="etl\Tables\MergeLogger.sql" />
     <Build Include="etl\Stored Procedures\sp_MergeLoggerAdd.sql" />
+    <Build Include="etl\Tables\NHA_Practice_Test.sql" />
+    <Build Include="etl\Tables\Exams_NHAMedCertsAlHistory.sql" />
+    <Build Include="dwh\Tables\sf_ProgramAssigment.sql" />
+    <Build Include="dwh\Tables\sf_Program.sql" />
+    <Build Include="dwh\Tables\sf_PracticeExam__c.sql" />
+    <Build Include="dwh\Tables\sf_ExamPrepCourseAssignment__c.sql" />
+    <Build Include="dwh\Tables\sf_Contact.sql" />
+    <Build Include="dwh\Tables\sf_CertificationAttempt__c.sql" />
+    <Build Include="dbo\Tables\sf_Contact.sql" />
+    <Build Include="dbo\Tables\Exams_NHAMedCertsAllHistory.sql" />
+    <Build Include="dbo\Tables\Exams_NHA MedCertsAllHistory.sql" />
+    <Build Include="dbo\Tables\Exams_NHA MedCertsAll History.sql" />
+    <Build Include="dwh\Views\v_NHA_Practice_Test.sql" />
+    <Build Include="dwh\Views\v_NHA_ExamPrepCourseAssignment.sql" />
+    <Build Include="dwh\Views\v_NHA_Certification_Exam.sql" />
   </ItemGroup>
 </Project>

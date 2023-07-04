@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_CertificationAttemps"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{CB148853-3835-41EA-B4FD-198B6AF47C1E}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{1B32DCCF-FF1E-4F58-A37E-F0985675DB66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -362,10 +362,10 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAPtgDn1K6pNzhOqRcEEzbyAAAAAASAAACgAAAAEAAAAHxynkOT2Xnep5LH3lwrCVcgAAAA/g/unMwALtywJoBPPNtlGFu6DtMzpq4Vp5ENm/qAoXYUAAAAMtTU/zOzTz01COFxuFGAJlHiZvY</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADfqf0ETVKR5WypKVDRn6QNAAAAAASAAACgAAAAEAAAAN2q05YGixjxArESjtHIg2ggAAAAKgnfJ5JFEsDXYUhaddCIOwxnfrHD/wcY31yx0tLu8lkUAAAAvAQKjcd1zuzmD6LIUMfh42brqzU</Password>
           <SecurityToken
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACznqKdxnXVNAlVZcb5i8nQAAAAAASAAACgAAAAEAAAANw2sfz2APHnX/tcJLmLx+04AAAA83cH3/CYIDkfnxusyOAQ1cuwLFiB596g9xX0xZawra5NB/eB4gJFO9zR9jLHnWVwYu4LuO/d7L4UAAAAxKHH32jSNgDOXyvoztr3342kqhI</SecurityToken>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB9RirFcMP8yT9d+vsxQTo2AAAAAASAAACgAAAAEAAAAPNo8NEEH9w7m12gUgdG2n84AAAApY/94111TqGLHHR2M/RhaL3W0P16glT/t1R5j584o+6i08CtbmXtS3Z0LZrV3q6NjzPP74va30oUAAAAmrpBwIaM+bPxyrOkGEoSu1qrMNw</SecurityToken>
         </SalesforceConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -395,6 +395,624 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
+      DTS:refId="Package\delete from Salesforce CertificationAttempt__c"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{A217EAE6-026F-44A3-9BF9-67DABB68279F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="delete from Salesforce CertificationAttempt__c"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2023 KingswaySoft Inc."
+              description="Populate data into Salesforce."
+              name="Salesforce Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how data is written to Salesforce."
+                  expressionType="Notify"
+                  name="ActionType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Salesforce.SalesforceDestinationActionType">4</property>
+                <property
+                  dataType="System.String"
+                  description="Destination object to write data."
+                  expressionType="Notify"
+                  name="DestinationObject">CertificationAttempt__c</property>
+                <property
+                  dataType="System.Int32"
+                  description="Batch size"
+                  expressionType="Notify"
+                  name="BatchSize">50</property>
+                <property
+                  dataType="System.String"
+                  description="Specify the External ID field to be used for Salesforce upsert action."
+                  expressionType="Notify"
+                  name="UpsertExternalIdField"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether you wan to use Salesforce Bulk API to load data."
+                  expressionType="Notify"
+                  name="UseBulkApi">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Bulk data format to use when Salesforce Bulk API is used."
+                  expressionType="Notify"
+                  name="BulkDataFormat"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Common.DescriptiveEnumTypeConverter`1[[KingswaySoft.IntegrationToolkit.Salesforce.BulkDataFormat">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Concurrency mode when Salesforce Bulk API is used."
+                  expressionType="Notify"
+                  name="ConcurrencyMode"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Salesforce.ConcurrencyMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to remove those invalid characters before writing to Salesforce."
+                  expressionType="Notify"
+                  name="RemoveInvalidCharacters">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When true, datetime values should be sent to Salesforce in UTC format. The default is false, in which case, datetime values will be posted to Salesforce in local system time. "
+                  expressionType="Notify"
+                  name="SendDateTimeInUtcFormat">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to ignore those NULL-valued fields."
+                  expressionType="Notify"
+                  name="IgnoreNullValuedFields">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to send empty strings as NULLs when writing to Salesforce. When disabled, empty strings will not be converted to NULL value, therefore will not be posted to Salesforce. This can be helpful in the case that you want to retain original values in Salesforce when the incoming value is empty (not NULL though). "
+                  expressionType="Notify"
+                  name="SendEmptyStringsAsNullValues">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to write batch files withUTF-8 encoding when using Bulk API to write to Salesforce."
+                  expressionType="Notify"
+                  name="WriteBatchFilesWithUtf8Encoding">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.Salesforce.SalesforceDestinationComponent</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Connections[Salesforce]"
+                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  description="Salesforce Connection"
+                  name="Salesforce" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Inputs[Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Inputs[Input].Columns[Id]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Inputs[Input].ExternalColumns[Id]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Inputs[Input].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="FieldType">id</property>
+                        <property
+                          dataType="System.String"
+                          isArray="true"
+                          name="LookupTypes">
+                          <arrayElements
+                            arrayElementCount="1">
+                            <arrayElement
+                              dataType="System.String">CertificationAttempt__c</arrayElement>
+                          </arrayElements>
+                        </property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error Output"
+                  synchronousInputId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Inputs[Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Default Output]"
+                  exclusionGroup="1"
+                  name="Default Output"
+                  synchronousInputId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Inputs[Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Default Output].Columns[SalesforceRecordId]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Default Output].Columns[SalesforceRecordId]"
+                      name="SalesforceRecordId" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Default Output].Columns[IsNew]"
+                      dataType="bool"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Outputs[Default Output].Columns[IsNew]"
+                      name="IsNew" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2023 KingswaySoft Inc."
+              description="Extract data from Salesforce."
+              name="Salesforce Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of source data from Salesforce"
+                  expressionType="Notify"
+                  name="SourceType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Salesforce.SalesforceSourceType">0</property>
+                <property
+                  dataType="System.String"
+                  description="Salesforce object to retrieve data from."
+                  expressionType="Notify"
+                  name="SourceObject">CertificationAttempt__c</property>
+                <property
+                  dataType="System.String"
+                  description="Salesforce object query statement."
+                  expressionType="Notify"
+                  name="ObjectQuery"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the batch size of the query."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether deleted or archived records should be returned."
+                  expressionType="Notify"
+                  name="IncludeDeletedArchived">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to use Salesforce Bulk API to read data."
+                  expressionType="Notify"
+                  name="UseBulkApi">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the output timezone for Salesforce datetime values."
+                  expressionType="Notify"
+                  name="OutputTimezone"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Common.DescriptiveEnumTypeConverter`1[[KingswaySoft.IntegrationToolkit.Salesforce.SfdcSourceOutputTimezone" />
+                <property
+                  dataType="System.String"
+                  description="Specify the PK Chunking Header that helps with Bulk API data read performance."
+                  expressionType="Notify"
+                  name="PKChunkingHeader"></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.Salesforce.SalesforceSourceComponent</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Connections[Salesforce]"
+                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  description="Salesforce Connection"
+                  name="Salesforce" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output]"
+                  name="Salesforce Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Approval_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Approval_Date__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Approval_Date__c]"
+                      name="Approval_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Attempt_Number__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]"
+                      name="Attempt_Number__c"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Case_Safe_ID__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Case_Safe_ID__c]"
+                      length="1300"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Case_Safe_ID__c]"
+                      name="Case_Safe_ID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Contact__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Contact__c]"
+                      length="18"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Contact__c]"
+                      name="Contact__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      length="18"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      name="CreatedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Exam_Raw_Score__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]"
+                      name="Exam_Raw_Score__c"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Exam_Result__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Exam_Result__c]"
+                      length="255"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Exam_Result__c]"
+                      name="Exam_Result__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      length="18"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      name="IsDeleted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      length="18"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      name="LastModifiedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      length="80"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Prog_Con_Assignment__c]"
+                      length="18"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]"
+                      name="Prog_Con_Assignment__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Registered_Program__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Registered_Program__c]"
+                      length="255"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Registered_Program__c]"
+                      name="Registered_Program__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Registration_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Registration_Date__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Registration_Date__c]"
+                      name="Registration_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Registration_Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Registration_Status__c]"
+                      length="255"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Registration_Status__c]"
+                      name="Registration_Status__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Scheduled_Date__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]"
+                      name="Scheduled_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Status_Updated_Date__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]"
+                      name="Status_Updated_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      name="SystemModstamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Testing_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Testing_Date__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Testing_Date__c]"
+                      name="Testing_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Testing_Result__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Testing_Result__c]"
+                      length="255"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Testing_Result__c]"
+                      name="Testing_Result__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Voucher__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Voucher__c]"
+                      length="50"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Voucher__c]"
+                      name="Voucher__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Sent_Date__c]"
+                      lineageId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]"
+                      name="Voucher_Sent_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Approval_Date__c]"
+                      dataType="dbDate"
+                      name="Approval_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Attempt_Number__c]"
+                      dataType="numeric"
+                      name="Attempt_Number__c"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Case_Safe_ID__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Case_Safe_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Contact__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Contact__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Exam_Raw_Score__c]"
+                      dataType="numeric"
+                      name="Exam_Raw_Score__c"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Exam_Result__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Exam_Result__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      dataType="bool"
+                      name="IsDeleted" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="LastModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Prog_Con_Assignment__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Prog_Con_Assignment__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Registered_Program__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Registered_Program__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Registration_Date__c]"
+                      dataType="dbDate"
+                      name="Registration_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Registration_Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Registration_Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Scheduled_Date__c]"
+                      dataType="dbDate"
+                      name="Scheduled_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Status_Updated_Date__c]"
+                      dataType="dbDate"
+                      name="Status_Updated_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      dataType="dbTimeStamp"
+                      name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Testing_Date__c]"
+                      dataType="dbDate"
+                      name="Testing_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Testing_Result__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Testing_Result__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Voucher__c]"
+                      dataType="wstr"
+                      length="50"
+                      name="Voucher__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Sent_Date__c]"
+                      dataType="dbDate"
+                      name="Voucher_Sent_Date__c" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\delete from Salesforce CertificationAttempt__c.Paths[Salesforce Source Output]"
+              endId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination.Inputs[Input]"
+              name="Salesforce Source Output"
+              startId="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source.Outputs[Salesforce Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\from Salesforce to SQL"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:DelayValidation="True"
@@ -410,11 +1028,11 @@
           version="1">
           <components>
             <component
-              refId="Package\from Salesforce to SQL\Contact"
+              refId="Package\from Salesforce to SQL\CertificationAttempt__c"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2023 KingswaySoft Inc."
               description="Extract data from Salesforce."
-              name="Contact"
+              name="CertificationAttempt__c"
               usesDispositions="true"
               version="1">
               <properties>
@@ -471,7 +1089,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\from Salesforce to SQL\Contact.Connections[Salesforce]"
+                  refId="Package\from Salesforce to SQL\CertificationAttempt__c.Connections[Salesforce]"
                   connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
                   connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
@@ -479,335 +1097,335 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output]"
+                  refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output]"
                   name="Salesforce Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Approval_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Approval_Date__c]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Approval_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Approval_Date__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Approval_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Approval_Date__c]"
                       name="Approval_Date__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Attempt_Number__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Attempt_Number__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]"
                       name="Attempt_Number__c"
                       precision="18"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Contact__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Contact__c]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Contact__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Contact__c]"
                       length="18"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Contact__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Contact__c]"
                       name="Contact__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[CreatedById]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
                       length="18"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[CreatedById]"
                       name="CreatedById"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[CreatedDate]"
                       name="CreatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Exam_Raw_Score__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Exam_Raw_Score__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]"
                       name="Exam_Raw_Score__c"
                       precision="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Exam_Result__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Exam_Result__c]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Exam_Result__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Exam_Result__c]"
                       length="255"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Exam_Result__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Exam_Result__c]"
                       name="Exam_Result__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Id]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Id]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Id]"
                       length="18"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Id]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Id]"
                       name="Id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[IsDeleted]"
                       dataType="bool"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[IsDeleted]"
                       name="IsDeleted"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
                       length="18"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
                       name="LastModifiedById"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
                       name="LastModifiedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Name]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Name]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Name]"
                       length="80"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Name]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Name]"
                       name="Name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Prog_Con_Assignment__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Prog_Con_Assignment__c]"
                       length="18"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]"
                       name="Prog_Con_Assignment__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registered_Program__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registered_Program__c]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Registered_Program__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Registered_Program__c]"
                       length="255"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registered_Program__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registered_Program__c]"
                       name="Registered_Program__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registration_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registration_Date__c]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Registration_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registration_Date__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Registration_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registration_Date__c]"
                       name="Registration_Date__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registration_Status__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registration_Status__c]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Registration_Status__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Registration_Status__c]"
                       length="255"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registration_Status__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registration_Status__c]"
                       name="Registration_Status__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Scheduled_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Scheduled_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]"
                       name="Scheduled_Date__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Status_Updated_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Status_Updated_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]"
                       name="Status_Updated_Date__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
                       name="SystemModstamp"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Testing_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Testing_Date__c]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Testing_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Testing_Date__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Testing_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Testing_Date__c]"
                       name="Testing_Date__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Testing_Result__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Testing_Result__c]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Testing_Result__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Testing_Result__c]"
                       length="255"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Testing_Result__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Testing_Result__c]"
                       name="Testing_Result__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Voucher__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Voucher__c]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Voucher__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Voucher__c]"
                       length="50"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Voucher__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Voucher__c]"
                       name="Voucher__c"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Sent_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Sent_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]"
                       name="Voucher_Sent_Date__c"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Approval_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Approval_Date__c]"
                       dataType="dbDate"
                       name="Approval_Date__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Attempt_Number__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Attempt_Number__c]"
                       dataType="numeric"
                       name="Attempt_Number__c"
                       precision="18" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Contact__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Contact__c]"
                       dataType="wstr"
                       length="18"
                       name="Contact__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
                       dataType="wstr"
                       length="18"
                       name="CreatedById" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Exam_Raw_Score__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Exam_Raw_Score__c]"
                       dataType="numeric"
                       name="Exam_Raw_Score__c"
                       precision="6" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Exam_Result__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Exam_Result__c]"
                       dataType="wstr"
                       length="255"
                       name="Exam_Result__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Id]"
                       dataType="wstr"
                       length="18"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
                       dataType="bool"
                       name="IsDeleted" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
                       dataType="wstr"
                       length="18"
                       name="LastModifiedById" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
                       dataType="dbTimeStamp"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Name]"
                       dataType="wstr"
                       length="80"
                       name="Name" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Prog_Con_Assignment__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Prog_Con_Assignment__c]"
                       dataType="wstr"
                       length="18"
                       name="Prog_Con_Assignment__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Registered_Program__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Registered_Program__c]"
                       dataType="wstr"
                       length="255"
                       name="Registered_Program__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Registration_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Registration_Date__c]"
                       dataType="dbDate"
                       name="Registration_Date__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Registration_Status__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Registration_Status__c]"
                       dataType="wstr"
                       length="255"
                       name="Registration_Status__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Scheduled_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Scheduled_Date__c]"
                       dataType="dbDate"
                       name="Scheduled_Date__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Status_Updated_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Status_Updated_Date__c]"
                       dataType="dbDate"
                       name="Status_Updated_Date__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
                       dataType="dbTimeStamp"
                       name="SystemModstamp" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Testing_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Testing_Date__c]"
                       dataType="dbDate"
                       name="Testing_Date__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Testing_Result__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Testing_Result__c]"
                       dataType="wstr"
                       length="255"
                       name="Testing_Result__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Voucher__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Voucher__c]"
                       dataType="wstr"
                       length="50"
                       name="Voucher__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Sent_Date__c]"
+                      refId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Sent_Date__c]"
                       dataType="dbDate"
                       name="Voucher_Sent_Date__c" />
                   </externalMetadataColumns>
@@ -892,151 +1510,151 @@
                       cachedLength="80"
                       cachedName="Name"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Name]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Name]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Approval_Date__c]"
                       cachedDataType="dbDate"
                       cachedName="Approval_Date__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Approval_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Approval_Date__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Approval_Date__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Attempt_Number__c]"
                       cachedDataType="numeric"
                       cachedName="Attempt_Number__c"
                       cachedPrecision="18"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Attempt_Number__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Attempt_Number__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Contact__c]"
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="Contact__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Contact__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Contact__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Contact__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[CreatedById]"
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="CreatedById"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[CreatedById]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[CreatedById]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbTimeStampOffset"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Exam_Raw_Score__c]"
                       cachedDataType="numeric"
                       cachedName="Exam_Raw_Score__c"
                       cachedPrecision="6"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Exam_Raw_Score__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Exam_Raw_Score__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Exam_Result__c]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Exam_Result__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Exam_Result__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Exam_Result__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Exam_Result__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Id]"
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="Id"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Id]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Id]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[IsDeleted]"
                       cachedDataType="bool"
                       cachedName="IsDeleted"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[IsDeleted]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[IsDeleted]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[LastModifiedById]"
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="LastModifiedById"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedById]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastModifiedById]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[LastModifiedById]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[LastModifiedDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbTimeStampOffset"
                       cachedName="LastModifiedDate"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Prog_Con_Assignment__c]"
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="Prog_Con_Assignment__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Prog_Con_Assignment__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Prog_Con_Assignment__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Registered_Program__c]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Registered_Program__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Registered_Program__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registered_Program__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registered_Program__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Registration_Date__c]"
                       cachedDataType="dbDate"
                       cachedName="Registration_Date__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Registration_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registration_Date__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registration_Date__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Registration_Status__c]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Registration_Status__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Registration_Status__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Registration_Status__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Registration_Status__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Scheduled_Date__c]"
                       cachedDataType="dbDate"
                       cachedName="Scheduled_Date__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Scheduled_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Scheduled_Date__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Status_Updated_Date__c]"
                       cachedDataType="dbDate"
                       cachedName="Status_Updated_Date__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Status_Updated_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Status_Updated_Date__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[SystemModstamp]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbTimeStampOffset"
                       cachedName="SystemModstamp"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Voucher_Sent_Date__c]"
                       cachedDataType="dbDate"
                       cachedName="Voucher_Sent_Date__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Voucher_Sent_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Voucher_Sent_Date__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Voucher__c]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Voucher__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Voucher__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Voucher__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Voucher__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Testing_Result__c]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Testing_Result__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Testing_Result__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Testing_Result__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Testing_Result__c]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].Columns[Testing_Date__c]"
                       cachedDataType="dbDate"
                       cachedName="Testing_Date__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input].ExternalColumns[Testing_Date__c]"
-                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Testing_Date__c]" />
+                      lineageId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output].Columns[Testing_Date__c]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1185,7 +1803,7 @@
               refId="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
               endId="Package\from Salesforce to SQL\sf_CertificationAttempt__c.Inputs[OLE DB Destination Input]"
               name="Salesforce Source Output"
-              startId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output]" />
+              startId="Package\from Salesforce to SQL\CertificationAttempt__c.Outputs[Salesforce Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1217,6 +1835,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\from Salesforce to SQL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DC37D781-567E-4C41-8531-6E0DD00B96A4}"
+      DTS:From="Package\delete from Salesforce CertificationAttempt__c"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\truncate sf_CertificationAttempt__c" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1229,7 +1855,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="306,42"
+          Id="Package\delete from Salesforce CertificationAttempt__c"
+          TopLeft="577,145" />
         <NodeLayout
           Size="193,42"
           Id="Package\from Salesforce to SQL"
@@ -1272,31 +1902,115 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="577,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-97,-50"
+              Start="0,0"
+              End="-89.5,-50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-44.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.5,0"
+                    Point2="-48.5,0"
+                    Point3="-48.5,-4" />
+                  <mssgle:LineSegment
+                    End="-48.5,-46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.5,-46"
+                    Point2="-48.5,-50"
+                    Point3="-52.5,-50" />
+                  <mssgle:LineSegment
+                    End="-89.5,-50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\delete from Salesforce CertificationAttempt__c">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\delete from Salesforce CertificationAttempt__c\Salesforce Destination"
+          TopLeft="553,228" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\delete from Salesforce CertificationAttempt__c\Salesforce Source"
+          TopLeft="335,117" />
+        <EdgeLayout
+          Id="Package\delete from Salesforce CertificationAttempt__c.Paths[Salesforce Source Output]"
+          TopLeft="419.5,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="228,69"
+              Start="0,0"
+              End="228,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
+                  <mssgle:LineSegment
+                    End="224,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="224,34.5"
+                    Point2="228,34.5"
+                    Point3="228,38.5" />
+                  <mssgle:LineSegment
+                    End="228,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\from Salesforce to SQL">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="117,42"
-          Id="Package\from Salesforce to SQL\Contact"
-          TopLeft="316,205" />
-        <NodeLayout
           Size="207,42"
           Id="Package\from Salesforce to SQL\sf_CertificationAttempt__c"
-          TopLeft="473,337" />
+          TopLeft="472,337" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\from Salesforce to SQL\CertificationAttempt__c"
+          TopLeft="316,205" />
         <EdgeLayout
           Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
-          TopLeft="374.5,247">
+          TopLeft="412.5,247">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="202,90"
+              EndConnector="163,90"
               Start="0,0"
-              End="202,82.5">
+              End="163,82.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1307,13 +2021,13 @@
                     Point2="0,45"
                     Point3="4,45" />
                   <mssgle:LineSegment
-                    End="198,45" />
+                    End="159,45" />
                   <mssgle:CubicBezierSegment
-                    Point1="198,45"
-                    Point2="202,45"
-                    Point3="202,49" />
+                    Point1="159,45"
+                    Point2="163,45"
+                    Point3="163,49" />
                   <mssgle:LineSegment
-                    End="202,82.5" />
+                    End="163,82.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
