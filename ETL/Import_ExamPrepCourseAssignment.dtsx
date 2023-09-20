@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_ExamPrepCourseAssignment"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{65979201-6925-4B51-9510-95CB979A080E}">
+  DTS:VersionBuild="111"
+  DTS:VersionGUID="{E0EBA20D-BD16-4363-9366-12128D6F2CDD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -351,42 +351,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{45964170-8E93-46E8-AB40-3791823F3D12}"
-      DTS:ObjectName="Salesforce Connection Manager">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;TokenPath=;ClientId=;RedirectUri=;CertificateThumbprint=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABbr75kdQExaxEBfyFBlfLAAAAAAASAAACgAAAAEAAAAHxCZxq1lozDzzgrPBtCwiEgAAAAVBRkCqjJ4I5kf6knUFv7yY9eKO5D92qKV2OkI+f/6o4UAAAAiSLr0P/7qdRLntO64zk5D1z8C2Y</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABKvOoZN/QAGskZGWZi6IqrAAAAAASAAACgAAAAEAAAAHal/99zOkDBOG3gQrviAxs4AAAAeBBWhnZXQEYAQ1cHFto4u4+pd3oPAEVTDs35UdHux+yKKX4EwXSFbjMI8SHsTb53aSpzOb9rI2kUAAAAnvOgqlslrAApGe3WbmWtyfiZZoo</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager 1]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{48E88658-5C14-4715-93A1-A16937345712}"
-      DTS:ObjectName="Salesforce Connection Manager 1">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;TokenPath=;ClientId=;RedirectUri=;CertificateThumbprint=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB+p8msP54gU+l7/HC5cp6pAAAAAASAAACgAAAAEAAAAGQEZ9A/S+TrnqbpQjIr2gcgAAAAu+rungYpUtWrWatybVzxHZHMfhJbdsop33iUod71REMUAAAAG2hfeBNZmZwF1bK5cBjGNvQiQ28</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACUYf1oVC+T7kw/s2xwm4fDAAAAAASAAACgAAAAEAAAANTt46x+KNkcrEK9/EYdQAg4AAAAApx2n/bAVlmowr/OcS2WONycU6zksVy0WcDiGx2qiBRkf5YOMDkWd04MdVMiXV9LHPCS0qsORUEUAAAALqAE/oGsZU5c17fA6Rcxf0ASrgU</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -416,7 +380,6 @@
       DTS:refId="Package\delete from ExamPrepCourseAssignment__c"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{84cdabc5-30ba-4086-b337-7394cf1bf82b}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -451,7 +414,7 @@
                   dataType="System.Int32"
                   description="Batch size"
                   expressionType="Notify"
-                  name="BatchSize">50</property>
+                  name="BatchSize">200</property>
                 <property
                   dataType="System.String"
                   description="Specify the External ID field to be used for Salesforce upsert action."
@@ -506,8 +469,8 @@
               <connections>
                 <connection
                   refId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Destination.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager 1]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -662,8 +625,8 @@
               <connections>
                 <connection
                   refId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager 1]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -863,6 +826,16 @@
                       lineageId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Voucher_Code_Sent_Date__c]"
                       name="Voucher_Code_Sent_Date__c"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      length="18"
+                      lineageId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      name="ProgramCertification__c"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -957,6 +930,11 @@
                       refId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Code_Sent_Date__c]"
                       dataType="dbDate"
                       name="Voucher_Code_Sent_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramCertification__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -987,6 +965,131 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\from Salesforce to SQL\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[SystemModstamp]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="SystemModstamp"
+                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="CreatedDate"
+                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="LastModifiedDate"
+                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_]"
+                      name="SystemModstamp_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[SystemModstamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_]"
+                      name="CreatedDate_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[CreatedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_]"
+                      name="LastModifiedDate_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[LastModifiedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment"
               componentClassID="Microsoft.ManagedComponentHost"
@@ -1050,8 +1153,8 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -1138,7 +1241,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
@@ -1186,7 +1289,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
@@ -1225,7 +1328,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
@@ -1250,6 +1353,16 @@
                       externalMetadataColumnId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Code_Sent_Date__c]"
                       lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[Voucher_Code_Sent_Date__c]"
                       name="Voucher_Code_Sent_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      name="ProgramCertification__c"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1292,7 +1405,7 @@
                       name="CreatedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="CreatedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[External_Exam_Prep_Id__c]"
@@ -1315,7 +1428,7 @@
                       name="LastModifiedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[Name]"
@@ -1334,7 +1447,7 @@
                       name="Prog_Con_Assignment__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="SystemModstamp" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Code__c]"
@@ -1345,6 +1458,11 @@
                       refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[Voucher_Code_Sent_Date__c]"
                       dataType="dbDate"
                       name="Voucher_Code_Sent_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramCertification__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -1436,12 +1554,6 @@
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
                       lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[CreatedById]" />
                     <inputColumn
-                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
-                    <inputColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[IsDeleted]"
                       cachedDataType="bool"
                       cachedName="IsDeleted"
@@ -1455,24 +1567,12 @@
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedById]"
                       lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[LastModifiedById]" />
                     <inputColumn
-                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[LastModifiedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="LastModifiedDate"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
-                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
-                    <inputColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[Name]"
                       cachedDataType="wstr"
                       cachedLength="80"
                       cachedName="Name"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
                       lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[Name]" />
-                    <inputColumn
-                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[SystemModstamp]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="SystemModstamp"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
-                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[Account_Creation_Date__c]"
                       cachedDataType="dbDate"
@@ -1552,6 +1652,31 @@
                       cachedName="Voucher_Code_Sent_Date__c"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[Voucher_Code_Sent_Date__c]"
                       lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[Voucher_Code_Sent_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[ProgramCertification__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="ProgramCertification__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[ProgramCertification__c]"
+                      lineageId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[LastModifiedDate_]"
+                      cachedDataType="date"
+                      cachedName="LastModifiedDate_"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[CreatedDate_]"
+                      cachedDataType="date"
+                      cachedName="CreatedDate_"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].Columns[SystemModstamp_]"
+                      cachedDataType="date"
+                      cachedName="SystemModstamp_"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1567,7 +1692,8 @@
                       name="CreatedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="CreatedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
@@ -1580,7 +1706,8 @@
                       name="LastModifiedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
@@ -1589,7 +1716,8 @@
                       name="Name" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="SystemModstamp" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[Account_Creation_Date__c]"
@@ -1650,6 +1778,11 @@
                       dataType="wstr"
                       length="10"
                       name="Voucher_Code_Sent_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input].ExternalColumns[ProgramCertification__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramCertification__c" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1681,8 +1814,13 @@
           </components>
           <paths>
             <path
-              refId="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+              refId="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
               endId="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+              endId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
               name="Salesforce Source Output"
               startId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Outputs[Salesforce Source Output]" />
           </paths>
@@ -1738,6 +1876,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="299,42"
+          Id="Package\delete from ExamPrepCourseAssignment__c"
+          TopLeft="552,149" />
+        <NodeLayout
           Size="193,42"
           Id="Package\from Salesforce to SQL"
           TopLeft="243.999994859099,233.842109062335" />
@@ -1779,10 +1921,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="299,42"
-          Id="Package\delete from ExamPrepCourseAssignment__c"
-          TopLeft="552,149" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="552,170">
@@ -1820,69 +1958,6 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\from Salesforce to SQL">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="223,42"
-          Id="Package\from Salesforce to SQL\ExamPrepCourseAssignment"
-          TopLeft="316,205" />
-        <NodeLayout
-          Size="256,42"
-          Id="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c"
-          TopLeft="473,337" />
-        <EdgeLayout
-          Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
-          TopLeft="427.5,247">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="173.5,90"
-              Start="0,0"
-              End="173.5,82.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41"
-                    Point2="0,45"
-                    Point3="4,45" />
-                  <mssgle:LineSegment
-                    End="169.5,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="169.5,45"
-                    Point2="173.5,45"
-                    Point3="173.5,49" />
-                  <mssgle:LineSegment
-                    End="173.5,82.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\delete from ExamPrepCourseAssignment__c">
     <LayoutInfo>
@@ -1933,5 +2008,106 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\from Salesforce to SQL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="256,42"
+          Id="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c"
+          TopLeft="473,337" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\from Salesforce to SQL\ExamPrepCourseAssignment"
+          TopLeft="270.16666848792,184.416666503085" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\from Salesforce to SQL\Data Conversion"
+          TopLeft="630.62498000761,203.666668285264" />
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+          TopLeft="493.16666848792,205.416666503085">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.45831151969,19.2500017821789"
+              Start="0,0"
+              End="129.95831151969,19.2500017821789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="64.729155759845,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.729155759845,0"
+                    Point2="68.729155759845,0"
+                    Point3="68.729155759845,4" />
+                  <mssgle:LineSegment
+                    End="68.729155759845,15.2500017821789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.729155759845,15.2500017821789"
+                    Point2="68.729155759845,19.2500017821789"
+                    Point3="72.729155759845,19.2500017821789" />
+                  <mssgle:LineSegment
+                    End="129.95831151969,19.2500017821789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
+          TopLeft="718.62498000761,245.666668285264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-117.62498000761,91.3333317147361"
+              Start="0,0"
+              End="-117.62498000761,83.8333317147361">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.666665857368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.666665857368"
+                    Point2="0,45.666665857368"
+                    Point3="-4,45.666665857368" />
+                  <mssgle:LineSegment
+                    End="-113.62498000761,45.666665857368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-113.62498000761,45.666665857368"
+                    Point2="-117.62498000761,45.666665857368"
+                    Point3="-117.62498000761,49.666665857368" />
+                  <mssgle:LineSegment
+                    End="-117.62498000761,83.8333317147361" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

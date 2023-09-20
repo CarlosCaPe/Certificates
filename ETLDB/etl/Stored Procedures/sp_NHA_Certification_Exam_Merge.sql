@@ -2,6 +2,7 @@
 
 
 
+
 --SELECT * FROM ETL.NHA_Certification_Exam  WHERE FirstName = 'Ajenea' AND LastName =  'Rousseau' AND StudentEmail = 'ajenea.rousseau2@gmail.com' AND CertProduct = 'CPT' AND Status = 'exam_completed' and ExamResult = 'Fail'
 --SELECT FirstName,LastName,CertProduct,StudentEmail,Status,ExamResult,ActualExamDate FROM  ETL.NHA_Certification_Exam GROUP BY FirstName,LastName,CertProduct,StudentEmail,Status,ExamResult,ActualExamDate HAVING COUNT(*) > 1
 --DELETE FROM dwh.NHA_Certification_Exam
@@ -27,14 +28,14 @@ BEGIN
         MERGE dwh.NHA_Certification_Exam AS TARGET
         USING  etl.NHA_Certification_Exam AS SOURCE 
         ON (
-               TARGET.FirstName = SOURCE.FirstName
-               AND TARGET.LastName = SOURCE.LastName
-               AND TARGET.StudentEmail = SOURCE.StudentEmail
-			   AND TARGET.CertProduct = SOURCE.CertProduct
-			   AND TARGET.Status = SOURCE.Status
+			target.StudentEmail = source.StudentEmail
+               and TARGET.CertProduct = SOURCE.CertProduct
+			   and TARGET.NHAExamRegistrationDate = SOURCE.NHAExamRegistrationDate
+			   and TARGET.Status = SOURCE.Status
+			   and TARGET.Score = SOURCE.Score
+			   and TARGET.ApprovalDate = SOURCE.ApprovalDate
 			   and TARGET.ExamResult = SOURCE.ExamResult
-			   and TARGET.ActualExamDate = SOURCE.ActualExamDate
-
+	   
            )
         WHEN MATCHED THEN
             UPDATE SET TARGET.Institution = SOURCE.Institution,
@@ -44,10 +45,10 @@ BEGIN
                        TARGET.CetificationNumAwarded = SOURCE.CetificationNumAwarded,
                        TARGET.DataCurrentAsOf = SOURCE.DataCurrentAsOf,
                        TARGET.ModifiedBy = 'System',
-					   TARGET.NHAExamRegistrationDate = SOURCE.NHAExamRegistrationDate,
+					   TARGET.ActualExamDate = SOURCE.ActualExamDate,
 					   TARGET.PlannedExamDate = SOURCE.PlannedExamDate,
-					   TARGET.ApprovalDate = SOURCE.ApprovalDate,
-					   TARGET.Score = SOURCE.Score,
+					   TARGET.FirstName = SOURCE.FirstName,
+					   TARGET.LastName = SOURCE.LastName,
                        TARGET.ModifiedOn = GETDATE()
         WHEN NOT MATCHED BY TARGET THEN
             INSERT

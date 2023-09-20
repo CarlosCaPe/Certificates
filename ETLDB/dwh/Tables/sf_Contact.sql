@@ -11,6 +11,9 @@
     [Department]               NVARCHAR (80)   NULL,
     [Name]                     NVARCHAR (121)  NULL,
     [Order__c]                 NVARCHAR (18)   NULL,
-    [Phone]                    NVARCHAR (40)   NULL
+    [Phone]                    NVARCHAR (40)   NULL,
+    [NHA_Registered_email__c]  NVARCHAR (100)  NULL
 );
+
+
 

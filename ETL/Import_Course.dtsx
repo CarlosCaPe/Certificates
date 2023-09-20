@@ -1,0 +1,1601 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/24/2023 10:16:48 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MED-VDIPWV08"
+  DTS:CreatorName="MED\ccarrillo"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{94F4BA86-6D5D-4823-8415-4C028AE83FA9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Import_Course"
+  DTS:PackageType="5"
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{27045421-8501-494A-A90D-9092093D3231}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FlatFile_NHA_Certification_Exam]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{452B8598-B0F0-4144-977A-A0321F6584D0}"
+      DTS:ObjectName="FlatFile_NHA_Certification_Exam">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Path_NHACertificationExam] + "\\" + @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Certification Exam\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{8CC09907-74D5-44A7-8E48-53E952D9AC55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{B7C2B026-A19E-46D7-A279-273D3952BAC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Student Email"
+              DTS:DTSID="{B01CF099-1391-434E-AB06-37858D4A4BF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Institution"
+              DTS:DTSID="{9E20BB67-3EBB-4C71-8B4E-3D9088E7A3C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cert Product"
+              DTS:DTSID="{A059F34B-1C23-445E-8A05-ACC36AE32D15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductNumber"
+              DTS:DTSID="{3EAFADBF-8956-480D-82FC-8B0A6539C63B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHA Exam Registration Date"
+              DTS:DTSID="{4EAAAC7E-EDB5-452F-B328-5E3845EC64BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Order Taken"
+              DTS:DTSID="{9577E97B-4B68-4E4F-8DEF-9279D391EECB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mode of Testing"
+              DTS:DTSID="{1F28CF3E-66AC-4E53-9CE8-29490B6AA6AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Approval Date"
+              DTS:DTSID="{BDCF77DD-A30B-4D81-A069-1A2571D39DE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Planned Exam Date"
+              DTS:DTSID="{892037E5-BBA6-45D9-8258-D14BC1740068}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual Exam Date"
+              DTS:DTSID="{C08CEB03-06DE-4E4B-BF9D-76A7ABFD5A9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{09ACB073-FC90-4182-8758-A51E282FB3EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Result"
+              DTS:DTSID="{EDCCC86D-D356-4657-9E6E-2AE4310D1BCF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cetification # Awarded"
+              DTS:DTSID="{C1E5BA16-D0DD-47C0-B02F-1217BD275F2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Current As Of"
+              DTS:DTSID="{B4AC6DB5-C90F-4F8B-B815-E158028BAB50}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FlatFile_NHA_Certification_Exam_Loaded]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{9D543C33-7D2F-4FDF-A5F8-511EB9BC037F}"
+      DTS:ObjectName="FlatFile_NHA_Certification_Exam_Loaded">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Path_NHACertificationExam_LoadFiles] + "\\" +  @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Certification Exam\LoadFiles\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{8CC09907-74D5-44A7-8E48-53E952D9AC55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{B7C2B026-A19E-46D7-A279-273D3952BAC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Student Email"
+              DTS:DTSID="{B01CF099-1391-434E-AB06-37858D4A4BF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Institution"
+              DTS:DTSID="{9E20BB67-3EBB-4C71-8B4E-3D9088E7A3C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cert Product"
+              DTS:DTSID="{A059F34B-1C23-445E-8A05-ACC36AE32D15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductNumber"
+              DTS:DTSID="{3EAFADBF-8956-480D-82FC-8B0A6539C63B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHA Exam Registration Date"
+              DTS:DTSID="{4EAAAC7E-EDB5-452F-B328-5E3845EC64BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Order Taken"
+              DTS:DTSID="{9577E97B-4B68-4E4F-8DEF-9279D391EECB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mode of Testing"
+              DTS:DTSID="{1F28CF3E-66AC-4E53-9CE8-29490B6AA6AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Approval Date"
+              DTS:DTSID="{BDCF77DD-A30B-4D81-A069-1A2571D39DE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Planned Exam Date"
+              DTS:DTSID="{892037E5-BBA6-45D9-8258-D14BC1740068}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual Exam Date"
+              DTS:DTSID="{C08CEB03-06DE-4E4B-BF9D-76A7ABFD5A9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{09ACB073-FC90-4182-8758-A51E282FB3EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Result"
+              DTS:DTSID="{EDCCC86D-D356-4657-9E6E-2AE4310D1BCF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cetification # Awarded"
+              DTS:DTSID="{C1E5BA16-D0DD-47C0-B02F-1217BD275F2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Current As Of"
+              DTS:DTSID="{B4AC6DB5-C90F-4F8B-B815-E158028BAB50}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{267FDB4E-62AB-41D3-AEFA-02423DC05770}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7FF7FBE6-E6CA-4B44-AB7D-653CB20AF516}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Path_NHACertificationExam_LoadFiles] + &quot;\\&quot;  + RIGHT( @[User::FileName], FINDSTRING( REVERSE( @[User::FileName] ), &quot;\\&quot;, 1 )   )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadFileName">
+      <DTS:VariableValue
+        DTS:DataType="8">\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Certification Exam\LoadFiles\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\from Salesforce to SQL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5BBE8D98-8152-4737-B331-242C932BC9FB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="from Salesforce to SQL">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\from Salesforce to SQL\Course"
+              componentClassID="Microsoft.ManagedComponentHost"
+              description="Extract data from Salesforce."
+              name="Course"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of source data from Salesforce"
+                  expressionType="Notify"
+                  name="SourceType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Salesforce.SalesforceSourceType">0</property>
+                <property
+                  dataType="System.String"
+                  description="Salesforce object to retrieve data from."
+                  expressionType="Notify"
+                  name="SourceObject">enlighten__Course__c</property>
+                <property
+                  dataType="System.String"
+                  description="Salesforce object query statement."
+                  expressionType="Notify"
+                  name="ObjectQuery"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the batch size of the query."
+                  expressionType="Notify"
+                  name="BatchSize">100</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether deleted or archived records should be returned."
+                  expressionType="Notify"
+                  name="IncludeDeletedArchived">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to use Salesforce Bulk API to read data."
+                  expressionType="Notify"
+                  name="UseBulkApi">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the output timezone for Salesforce datetime values."
+                  expressionType="Notify"
+                  name="OutputTimezone"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Common.DescriptiveEnumTypeConverter`1[[KingswaySoft.IntegrationToolkit.Salesforce.SfdcSourceOutputTimezone" />
+                <property
+                  dataType="System.String"
+                  description="Specify the PK Chunking Header that helps with Bulk API data read performance."
+                  expressionType="Notify"
+                  name="PKChunkingHeader"></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.Salesforce.SalesforceSourceComponent</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to use timezone-aware data types for those datetime fields."
+                  expressionType="Notify"
+                  name="UseTimezoneAwareDataTypes">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\from Salesforce to SQL\Course.Connections[Salesforce]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
+                  description="Salesforce Connection"
+                  name="Salesforce" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output]"
+                  name="Salesforce Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      name="CreatedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStampOffset"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Category__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Category__c]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Category__c]"
+                      name="enlighten__Course_Category__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Creator__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Creator__c]"
+                      length="100"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Creator__c]"
+                      name="enlighten__Course_Creator__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Description__c]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Description__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Description__c]"
+                      name="enlighten__Course_Description__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_End_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_End_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_End_Date__c]"
+                      name="enlighten__Course_End_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Full_Name__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Full_Name__c]"
+                      length="254"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Full_Name__c]"
+                      name="enlighten__Course_Full_Name__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_ID__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_ID__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_ID__c]"
+                      name="enlighten__Course_ID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Name_Extended__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Name_Extended__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Name_Extended__c]"
+                      name="enlighten__Course_Name_Extended__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Start_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Start_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Start_Date__c]"
+                      name="enlighten__Course_Start_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Creation_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Creation_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Creation_Date__c]"
+                      name="enlighten__Creation_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Is_Deleted__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Is_Deleted__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Is_Deleted__c]"
+                      name="enlighten__Is_Deleted__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__MoodleID__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__MoodleID__c]"
+                      length="50"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__MoodleID__c]"
+                      name="enlighten__MoodleID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__source__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__source__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__source__c]"
+                      name="enlighten__source__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Sub_Account__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Sub_Account__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Sub_Account__c]"
+                      name="enlighten__Sub_Account__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Visible__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Visible__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Visible__c]"
+                      name="enlighten__Visible__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      name="IsDeleted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      name="LastModifiedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStampOffset"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastReferencedDate]"
+                      dataType="dbTimeStampOffset"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastReferencedDate]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastReferencedDate]"
+                      name="LastReferencedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastViewedDate]"
+                      dataType="dbTimeStampOffset"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastViewedDate]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastViewedDate]"
+                      name="LastViewedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      length="80"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[OwnerId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[OwnerId]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[OwnerId]"
+                      name="OwnerId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[Status__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Status__c]"
+                      name="Status__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      dataType="dbTimeStampOffset"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      name="SystemModstamp"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStampOffset"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Category__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="enlighten__Course_Category__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Creator__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="enlighten__Course_Creator__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Description__c]"
+                      dataType="nText"
+                      name="enlighten__Course_Description__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_End_Date__c]"
+                      dataType="dbDate"
+                      name="enlighten__Course_End_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Full_Name__c]"
+                      dataType="wstr"
+                      length="254"
+                      name="enlighten__Course_Full_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_ID__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__Course_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Name_Extended__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__Course_Name_Extended__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Course_Start_Date__c]"
+                      dataType="dbDate"
+                      name="enlighten__Course_Start_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Creation_Date__c]"
+                      dataType="dbDate"
+                      name="enlighten__Creation_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Is_Deleted__c]"
+                      dataType="bool"
+                      name="enlighten__Is_Deleted__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__MoodleID__c]"
+                      dataType="wstr"
+                      length="50"
+                      name="enlighten__MoodleID__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__source__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__source__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Sub_Account__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__Sub_Account__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[enlighten__Visible__c]"
+                      dataType="bool"
+                      name="enlighten__Visible__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      dataType="bool"
+                      name="IsDeleted" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="LastModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStampOffset"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastReferencedDate]"
+                      dataType="dbTimeStampOffset"
+                      name="LastReferencedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[LastViewedDate]"
+                      dataType="dbTimeStampOffset"
+                      name="LastViewedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[OwnerId]"
+                      dataType="wstr"
+                      length="18"
+                      name="OwnerId" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      dataType="dbTimeStampOffset"
+                      name="SystemModstamp" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\from Salesforce to SQL\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="CreatedDate"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="LastModifiedDate"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[LastReferencedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="LastReferencedDate"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastReferencedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[LastViewedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="LastViewedDate"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastViewedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[SystemModstamp]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="SystemModstamp"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[CreatedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastModifiedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastReferencedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastReferencedDate]"
+                      name="LastReferencedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastReferencedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastViewedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastViewedDate]"
+                      name="LastViewedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastViewedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp]"
+                      name="SystemModstamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[SystemModstamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\from Salesforce to SQL\sf_Course"
+              componentClassID="Microsoft.OLEDBDestination"
+              description="OLE DB Destination"
+              name="sf_Course"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dwh].[sf_Course]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\from Salesforce to SQL\sf_Course.Connections[OleDbConnection]"
+                  connectionManagerID="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ETLDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[CreatedById]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="CreatedById"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[CreatedById]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_Category__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="enlighten__Course_Category__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Category__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Category__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_Creator__c]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="enlighten__Course_Creator__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Creator__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Creator__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_Description__c]"
+                      cachedDataType="nText"
+                      cachedName="enlighten__Course_Description__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Description__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Description__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_End_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="enlighten__Course_End_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_End_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_End_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_Full_Name__c]"
+                      cachedDataType="wstr"
+                      cachedLength="254"
+                      cachedName="enlighten__Course_Full_Name__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Full_Name__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Full_Name__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_ID__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="enlighten__Course_ID__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_ID__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_ID__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_Name_Extended__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="enlighten__Course_Name_Extended__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Name_Extended__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Name_Extended__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Course_Start_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="enlighten__Course_Start_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Start_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Course_Start_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Creation_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="enlighten__Creation_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Creation_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Creation_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Is_Deleted__c]"
+                      cachedDataType="bool"
+                      cachedName="enlighten__Is_Deleted__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Is_Deleted__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Is_Deleted__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__MoodleID__c]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="enlighten__MoodleID__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__MoodleID__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__MoodleID__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__source__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="enlighten__source__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__source__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__source__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Sub_Account__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="enlighten__Sub_Account__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Sub_Account__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Sub_Account__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[enlighten__Visible__c]"
+                      cachedDataType="bool"
+                      cachedName="enlighten__Visible__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Visible__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[enlighten__Visible__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[IsDeleted]"
+                      cachedDataType="bool"
+                      cachedName="IsDeleted"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[IsDeleted]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[LastModifiedById]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="LastModifiedById"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedById]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[LastModifiedById]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[OwnerId]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="OwnerId"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[OwnerId]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[OwnerId]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[Status__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[Status__c]"
+                      lineageId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output].Columns[Status__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[LastViewedDate]"
+                      cachedDataType="date"
+                      cachedName="LastViewedDate"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastViewedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastViewedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[LastReferencedDate]"
+                      cachedDataType="date"
+                      cachedName="LastReferencedDate"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastReferencedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastReferencedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[LastModifiedDate]"
+                      cachedDataType="date"
+                      cachedName="LastModifiedDate"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="date"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].Columns[SystemModstamp]"
+                      cachedDataType="date"
+                      cachedName="SystemModstamp"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="wstr"
+                      length="26"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Category__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="enlighten__Course_Category__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Creator__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="enlighten__Course_Creator__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Description__c]"
+                      dataType="nText"
+                      name="enlighten__Course_Description__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_End_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="enlighten__Course_End_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Full_Name__c]"
+                      dataType="wstr"
+                      length="254"
+                      name="enlighten__Course_Full_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_ID__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__Course_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Name_Extended__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__Course_Name_Extended__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Course_Start_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="enlighten__Course_Start_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Creation_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="enlighten__Creation_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Is_Deleted__c]"
+                      dataType="bool"
+                      name="enlighten__Is_Deleted__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__MoodleID__c]"
+                      dataType="wstr"
+                      length="50"
+                      name="enlighten__MoodleID__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__source__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__source__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Sub_Account__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="enlighten__Sub_Account__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[enlighten__Visible__c]"
+                      dataType="bool"
+                      name="enlighten__Visible__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                      dataType="bool"
+                      name="IsDeleted" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="LastModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      dataType="wstr"
+                      length="26"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastReferencedDate]"
+                      dataType="wstr"
+                      length="26"
+                      name="LastReferencedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[LastViewedDate]"
+                      dataType="wstr"
+                      length="26"
+                      name="LastViewedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[OwnerId]"
+                      dataType="wstr"
+                      length="18"
+                      name="OwnerId" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
+                      dataType="wstr"
+                      length="26"
+                      name="SystemModstamp" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\sf_Course.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\sf_Course.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\sf_Course.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\sf_Course.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
+              endId="Package\from Salesforce to SQL\sf_Course.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+              endId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
+              name="Salesforce Source Output"
+              startId="Package\from Salesforce to SQL\Course.Outputs[Salesforce Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate sf_Course"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{03D71795-8EA4-4E47-9392-1498ED81C5C9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate sf_Course"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}"
+          SQLTask:SqlStatementSource="truncate table [dwh].[sf_Course]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{21ECFB79-BCA6-4089-982D-AB3B3E9337A8}"
+      DTS:From="Package\truncate sf_Course"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\from Salesforce to SQL" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\from Salesforce to SQL"
+          TopLeft="243.999994859099,233.842109062335" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\truncate sf_Course"
+          TopLeft="230,95" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="317,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.4999948590989,96.842109062335"
+              Start="0,0"
+              End="23.4999948590989,89.342109062335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4210545311675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.4210545311675"
+                    Point2="0,48.4210545311675"
+                    Point3="4,48.4210545311675" />
+                  <mssgle:LineSegment
+                    End="19.4999948590989,48.4210545311675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.4999948590989,48.4210545311675"
+                    Point2="23.4999948590989,48.4210545311675"
+                    Point3="23.4999948590989,52.4210545311675" />
+                  <mssgle:LineSegment
+                    End="23.4999948590989,89.342109062335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\from Salesforce to SQL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132,42"
+          Id="Package\from Salesforce to SQL\sf_Course"
+          TopLeft="473,337" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\from Salesforce to SQL\Course"
+          TopLeft="316,205" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\from Salesforce to SQL\Data Conversion"
+          TopLeft="639.166641268466,209.733335000144" />
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+          TopLeft="433,228.366667500072">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206.166641268466,0"
+              Start="0,0"
+              End="198.666641268466,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="198.666641268466,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
+          TopLeft="727.166641268466,251.733335000144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-188.166641268466,85.2666649998559"
+              Start="0,0"
+              End="-188.166641268466,77.7666649998559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.6333324999279" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.6333324999279"
+                    Point2="0,42.6333324999279"
+                    Point3="-4,42.6333324999279" />
+                  <mssgle:LineSegment
+                    End="-184.166641268466,42.6333324999279" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-184.166641268466,42.6333324999279"
+                    Point2="-188.166641268466,42.6333324999279"
+                    Point3="-188.166641268466,46.6333324999279" />
+                  <mssgle:LineSegment
+                    End="-188.166641268466,77.7666649998559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\from Salesforce to SQL\sf_Course">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

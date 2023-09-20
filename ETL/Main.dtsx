@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{5117CBA1-7BA7-4822-8D4C-911A5F06B259}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{2E03FE7E-612A-416C-973B-4262B2B8812D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\Export NHA CertificationAttempt"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Export NHA CertificationAttempt"
+      DTS:Disabled="True"
       DTS:DTSID="{19493cf6-97e5-425e-84b3-f0e916bbd8e6}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -38,6 +39,7 @@
       DTS:refId="Package\Export_NHA_PracticeTest"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Export NHA CertificationAttempt"
+      DTS:Disabled="True"
       DTS:DTSID="{b857f464-0c3c-48cb-bcba-40507fbad816}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -52,23 +54,6 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Import Program"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Import Program"
-      DTS:DTSID="{bceceb38-c5a4-49f0-866b-47f11c64b0d5}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Import Program"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Import_Program.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Share"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -78,23 +63,6 @@
       DTS:ObjectName="Share">
       <DTS:Variables />
       <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Share\ExamPrepCourseAssignment"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Import ExamPrepCourseAssignment"
-          DTS:DTSID="{dc4f5fcc-cafd-4711-b29a-afa6c897c335}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="ExamPrepCourseAssignment"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Import_ExamPrepCourseAssignment.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Share\Import Certification Attempts from Salesforce"
           DTS:CreationName="Microsoft.ExecutePackageTask"
@@ -130,6 +98,40 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Share\Import Course from Salesforce"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Import Course"
+          DTS:DTSID="{da3f0c41-cbb2-4430-a40a-128abb6b9df7}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Course from Salesforce"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Import_Course.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Share\Import ExamPrepCourseAssignment from Salesforce"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Import ExamPrepCourseAssignment"
+          DTS:DTSID="{dc4f5fcc-cafd-4711-b29a-afa6c897c335}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import ExamPrepCourseAssignment from Salesforce"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Import_ExamPrepCourseAssignment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Share\Import Practice Exam from Salesforce"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Import Practice Exam from Salesforce"
@@ -143,6 +145,57 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>Import_PracticeExam.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Share\Import Program Contact Assigment from Salesforce"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Import Program Contact Assigment from Salesforce"
+          DTS:DTSID="{909ae1e1-d3f8-46a0-a71f-96de6defa7b9}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Program Contact Assigment from Salesforce"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Import_ProgramContactAssigment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Share\Import Program Course Assosiation from Salesforce"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Import Program Course Assosiation from Salesforce"
+          DTS:DTSID="{6a17faec-b0c1-4deb-8228-7931ef657c25}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Program Course Assosiation from Salesforce"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Import_ProgramCourseAssosiation.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Share\Import Program from Salesforce"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Import Program"
+          DTS:DTSID="{a4e6d706-dc84-447a-807c-787d9ce69ae5}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Program from Salesforce"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Import_Program.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -199,64 +252,80 @@
         <NodeLayout
           Size="236,42"
           Id="Package\Export NHA CertificationAttempt"
-          TopLeft="922.88888888889,296.555555555556" />
+          TopLeft="1091.22221553326,296.555555555556" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Import Program"
-          TopLeft="315.5,379.184208826345" />
-        <NodeLayout
-          Size="223,42"
-          Id="Package\Share\ExamPrepCourseAssignment"
-          TopLeft="43.4682559745893,355" />
+          Size="207,42"
+          Id="Package\Export_NHA_PracticeTest"
+          TopLeft="1169.33332353168,464.022222731908" />
         <NodeLayout
           Size="298,42"
           Id="Package\Share\Import Certification Attempts from Salesforce"
-          TopLeft="5.5,107.756476304233" />
+          TopLeft="5.5,5.5" />
         <NodeLayout
-          Size="236,42"
+          Size="303,42"
           Id="Package\Share\Import Contacts from Salesforce"
-          TopLeft="75.839285768835,35.9444444444444" />
+          TopLeft="364,5.5" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\Share\Import Course from Salesforce"
+          TopLeft="727.5,5.5" />
+        <NodeLayout
+          Size="384,42"
+          Id="Package\Share\Import ExamPrepCourseAssignment from Salesforce"
+          TopLeft="1044.5,5.49999999999989" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Share\Import Practice Exam from Salesforce"
+          TopLeft="1489.5,5.49999999999989" />
+        <NodeLayout
+          Size="324,42"
+          Id="Package\Share\Import ProgramAssigment from Salesforce"
+          TopLeft="1864.5,5.49999999999977" />
         <NodeLayout
           Size="264,42"
-          Id="Package\Share\Import Practice Exam from Salesforce"
-          TopLeft="254.857144863478,280.628653270789" />
+          Id="Package\Share\Import Program from Salesforce"
+          TopLeft="2249.5,5.49999999999977" />
         <NodeLayout
-          Size="287,46"
-          Id="Package\Share\Import ProgramAssigment from Salesforce"
-          TopLeft="17.4285734349065,185.342938985075" />
+          Size="379,42"
+          Id="Package\Share\Import Program Course Assosiation from Salesforce"
+          TopLeft="2574,5.49999999999966" />
+        <NodeLayout
+          Size="379,42"
+          Id="Package\Share\Import Program Contact Assigment from Salesforce"
+          TopLeft="3014,5.49999999999966" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="524,452"
-          Size="524,495"
+          PanelSize="3398,102"
+          Size="3398,146"
           Id="Package\Share"
           TopLeft="286.666666666667,98.8888888888889" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="810.666666666667,265.222222222222">
+          TopLeft="1420.66666666667,244.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="112.222222222223,52.3333333333338"
+              EndConnector="-211.444451133407,51.6666666666671"
               Start="0,0"
-              End="104.722222222223,52.3333333333338">
+              End="-211.444451133407,44.1666666666671">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="41.1058307602814,0" />
+                    End="0,16.6812566184259" />
                   <mssgle:CubicBezierSegment
-                    Point1="41.1058307602814,0"
-                    Point2="45.1058307602814,0"
-                    Point3="45.1058307602814,4" />
+                    Point1="0,16.6812566184259"
+                    Point2="0,20.6812566184259"
+                    Point3="-4,20.6812566184259" />
                   <mssgle:LineSegment
-                    End="45.1058307602814,48.3333333333338" />
+                    End="-207.444451133407,20.6812566184259" />
                   <mssgle:CubicBezierSegment
-                    Point1="45.1058307602814,48.3333333333338"
-                    Point2="45.1058307602814,52.3333333333338"
-                    Point3="49.1058307602814,52.3333333333338" />
+                    Point1="-207.444451133407,20.6812566184259"
+                    Point2="-211.444451133407,20.6812566184259"
+                    Point3="-211.444451133407,24.6812566184259" />
                   <mssgle:LineSegment
-                    End="104.722222222223,52.3333333333338" />
+                    End="-211.444451133407,44.1666666666671" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -265,24 +334,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="207,42"
-          Id="Package\Export_NHA_PracticeTest"
-          TopLeft="922.666666666667,399.888888888889" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="810.666666666667,424.222222222222">
+          TopLeft="2550.66666666667,244.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="112,0"
+              EndConnector="-1277.83334313499,219.133333843019"
               Start="0,0"
-              End="104.5,0">
+              End="-1277.83334313499,211.633333843019">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="104.5,0" />
+                    End="0,83.7152137585541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,83.7152137585541"
+                    Point2="0,87.7152137585541"
+                    Point3="-4,87.7152137585541" />
+                  <mssgle:LineSegment
+                    End="-1273.83334313499,87.7152137585541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-1273.83334313499,87.7152137585541"
+                    Point2="-1277.83334313499,87.7152137585541"
+                    Point3="-1277.83334313499,91.7152137585541" />
+                  <mssgle:LineSegment
+                    End="-1277.83334313499,211.633333843019" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

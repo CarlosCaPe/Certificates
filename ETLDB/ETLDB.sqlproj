@@ -67,6 +67,7 @@
     <Folder Include="dwh\Tables\" />
     <Folder Include="etl\Stored Procedures\" />
     <Folder Include="dwh\Views\" />
+    <Folder Include="etl\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\SFContactImportError.sql" />
@@ -104,5 +105,15 @@
     <Build Include="dwh\Views\v_NHA_Practice_Test.sql" />
     <Build Include="dwh\Views\v_NHA_ExamPrepCourseAssignment.sql" />
     <Build Include="dwh\Views\v_NHA_Certification_Exam.sql" />
+    <Build Include="etl\Tables\MedCertsPracticeExamsFullHistory.sql" />
+    <Build Include="dwh\Tables\sf_ProgramCourseAssosiation__c.sql" />
+    <Build Include="dwh\Tables\sf_ProgramContactAssigment__c.sql" />
+    <Build Include="dwh\Tables\sf_ProgramContactAssigment.sql" />
+    <Build Include="dwh\Tables\sf_Course.sql" />
+    <Build Include="dwh\Tables\ProgramCodeToCert.sql" />
+    <Build Include="dbo\Tables\sf_ProgramAssigment.sql" />
+    <Build Include="dbo\Tables\MedCerts Practice Exams Full History.sql" />
+    <Build Include="etl\Views\v_ETL_No_Exceptions.sql" />
+    <Build Include="etl\Views\v_ETL_Exceptions.sql" />
   </ItemGroup>
 </Project>

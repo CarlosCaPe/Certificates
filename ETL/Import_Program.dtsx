@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_Program"
   DTS:PackageType="5"
-  DTS:VersionBuild="96"
-  DTS:VersionGUID="{EDC61D51-AD08-4112-8B2F-E71EB0F74354}">
+  DTS:VersionBuild="99"
+  DTS:VersionGUID="{BF60515C-19BA-486C-A368-6D306AADB89C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -351,24 +351,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{E8CF23CE-03EF-46A5-81D6-C4A3D1891C32}"
-      DTS:ObjectName="Salesforce Connection Manager">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;TokenPath=;ClientId=;RedirectUri=;CertificateThumbprint=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABCMkEYn4sx4uZ/knyRgKE1AAAAAASAAACgAAAAEAAAADggFBWoaUQKDXql/bCl9uMgAAAAd9OoIwP4TiqCI0uXMs7WlNa5iKG5+icX0NtTX8ax9zEUAAAAOwQjDIjbcLLvlbk3pOEpg0nxE/o</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADUFkvlCXPmvAOf1EGEMGDsAAAAAASAAACgAAAAEAAAAE9p5NYgDKYxUwHHjH/wYbE4AAAAQElMgIk7ZgKtXqTvvtMFcLw1PaDLmkh0tmTZ09l5px7C/OgPfC244HxJMNwB2Voaj2P8E8du2dEUAAAADcnfKQ/EEj4+kiIXYRHzguz3Klw</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -672,8 +654,8 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\Program.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -940,6 +922,34 @@
                       lineageId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
                       name="SystemModstamp"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Associated_Prep_Courses__c]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[Associated_Prep_Courses__c]"
+                      lineageId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Associated_Prep_Courses__c]"
+                      name="Associated_Prep_Courses__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Clinical_Required__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Required__c]"
+                      lineageId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Clinical_Required__c]"
+                      name="Clinical_Required__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Enrolled_Program_Code__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[Enrolled_Program_Code__c]"
+                      length="20"
+                      lineageId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Enrolled_Program_Code__c]"
+                      name="Enrolled_Program_Code__c"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1032,15 +1042,15 @@
                       name="LastModifiedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[LastReferencedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="LastReferencedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[LastViewedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="LastViewedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[Name]"
@@ -1064,8 +1074,21 @@
                       name="Program_Certificate_Name__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[Associated_Prep_Courses__c]"
+                      dataType="nText"
+                      name="Associated_Prep_Courses__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Required__c]"
+                      dataType="bool"
+                      name="Clinical_Required__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].ExternalColumns[Enrolled_Program_Code__c]"
+                      dataType="wstr"
+                      length="20"
+                      name="Enrolled_Program_Code__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -1319,6 +1342,25 @@
                       cachedName="CreatedDate_date"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_date]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].Columns[Associated_Prep_Courses__c]"
+                      cachedDataType="nText"
+                      cachedName="Associated_Prep_Courses__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Associated_Prep_Courses__c]"
+                      lineageId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Associated_Prep_Courses__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].Columns[Clinical_Required__c]"
+                      cachedDataType="bool"
+                      cachedName="Clinical_Required__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Required__c]"
+                      lineageId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Clinical_Required__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].Columns[Enrolled_Program_Code__c]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Enrolled_Program_Code__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Enrolled_Program_Code__c]"
+                      lineageId="Package\from Salesforce to SQL\Program.Outputs[Salesforce Source Output].Columns[Enrolled_Program_Code__c]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1340,7 +1382,8 @@
                       name="CreatedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="CreatedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Duration__c]"
@@ -1414,15 +1457,18 @@
                       name="LastModifiedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[LastReferencedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="LastReferencedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[LastViewedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="LastViewedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
@@ -1446,8 +1492,22 @@
                       name="Program_Certificate_Name__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Associated_Prep_Courses__c]"
+                      dataType="nText"
+                      name="Associated_Prep_Courses__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Required__c]"
+                      dataType="bool"
+                      name="Clinical_Required__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Program.Inputs[OLE DB Destination Input].ExternalColumns[Enrolled_Program_Code__c]"
+                      dataType="wstr"
+                      length="20"
+                      name="Enrolled_Program_Code__c" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1533,13 +1593,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="178,42"
-          Id="Package\truncate sf_Program"
-          TopLeft="230,95" />
-        <NodeLayout
           Size="193,42"
           Id="Package\from Salesforce to SQL"
           TopLeft="243.999994859099,233.842109062335" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\truncate sf_Program"
+          TopLeft="230,95" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="319,137">
@@ -1587,13 +1647,13 @@
           Id="Package\from Salesforce to SQL\Program"
           TopLeft="316,205" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\from Salesforce to SQL\sf_Program"
-          TopLeft="419,318" />
-        <NodeLayout
           Size="161,42"
           Id="Package\from Salesforce to SQL\Data Conversion"
           TopLeft="733,253" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\from Salesforce to SQL\sf_Program"
+          TopLeft="419,318" />
         <EdgeLayout
           Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
           TopLeft="437,226">

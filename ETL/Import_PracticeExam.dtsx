@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_PracticeExam"
   DTS:PackageType="5"
-  DTS:VersionBuild="93"
-  DTS:VersionGUID="{2965D340-49BB-440F-B659-94BAC0EB5806}">
+  DTS:VersionBuild="100"
+  DTS:VersionGUID="{C6A86CF5-592B-405E-9CDC-6A0112BA3EBC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -351,42 +351,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{2ACFB9A6-6E4D-4EDA-890A-84B9BD08B1BB}"
-      DTS:ObjectName="Salesforce Connection Manager">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;TokenPath=;ClientId=;RedirectUri=;CertificateThumbprint=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABFZ+SndZ/dpt3/VBT3k6JUAAAAAASAAACgAAAAEAAAAEi7QqjvJ3g15SX55Bw3QhcgAAAAQEJTBSr0qjsh+nL3UgVQD4S2xFXNGDK+GMNa+Df+8zUUAAAAkMzmNJZLkUJj6k4U5FVDv0xONIQ</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAuNu/JzC5xbbERvZ7puMkpAAAAAASAAACgAAAAEAAAALBHTSI5nr3qGByrykYaVzQ4AAAAoUuG7RVlmbik2Ijo+UDTdT/DvaH6LQGihhP0HzyAPCnLjySuuCxEzXMl2OD6SJKXJr3lVODOSIMUAAAAcXCTu6tiAo42VSkAVFApEFuC8Zo</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager 1]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{48E88658-5C14-4715-93A1-A16937345712}"
-      DTS:ObjectName="Salesforce Connection Manager 1">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;RedirectUri=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACdciCD+wl3ZpituzxkmwpxAAAAAASAAACgAAAAEAAAAFOtmHdcjxc96J7nr4AD5B4gAAAAh1BPNLSBapbc22jpBwGBEet+NLv8HDg5pivFsFveTXQUAAAA3DKKVOONVt18dFLnrLc47DfkrSY</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACGnBhGy3/IDg2J3vNYuQ7VAAAAAASAAACgAAAAEAAAAIJGkq5abAixKPyjsDdbL/04AAAA/tq5f67fMfZ+L9ji9nKQd0Tfv60IafHYfTJb7j8D5gbkUyCPWEtV1dpFb7wo/Iqph1qpv2elkmIUAAAAM3g7Cs2WB7/J3oQmvmRpJLpqkGE</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -416,7 +380,6 @@
       DTS:refId="Package\delete from Salesforce sf_PracticeExam__c"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{1b5f4aed-91f6-4e0a-8196-cd8b60f60e11}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -451,7 +414,7 @@
                   dataType="System.Int32"
                   description="Batch size"
                   expressionType="Notify"
-                  name="BatchSize">50</property>
+                  name="BatchSize">200</property>
                 <property
                   dataType="System.String"
                   description="Specify the External ID field to be used for Salesforce upsert action."
@@ -506,8 +469,8 @@
               <connections>
                 <connection
                   refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Destination.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager 1]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -662,8 +625,8 @@
               <connections>
                 <connection
                   refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager 1]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -778,6 +741,26 @@
                       lineageId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
                       name="SystemModstamp"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Attempt__c]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Attempt__c]"
+                      lineageId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Attempt__c]"
+                      name="Attempt__c"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      length="18"
+                      lineageId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      name="ProgramCertification__c"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -832,6 +815,16 @@
                       refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
                       dataType="dbTimeStamp"
                       name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Attempt__c]"
+                      dataType="numeric"
+                      name="Attempt__c"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramCertification__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -862,6 +855,131 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\from Salesforce to SQL\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="CreatedDate"
+                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="LastModifiedDate"
+                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[SystemModstamp]"
+                      cachedDataType="dbTimeStampOffset"
+                      cachedName="SystemModstamp"
+                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_]"
+                      name="CreatedDate_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[CreatedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_]"
+                      name="LastModifiedDate_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[LastModifiedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_]"
+                      name="SystemModstamp_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[SystemModstamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\from Salesforce to SQL\Practice Exam"
               componentClassID="Microsoft.ManagedComponentHost"
@@ -926,8 +1044,8 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\Practice Exam.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -948,7 +1066,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
@@ -996,7 +1114,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
@@ -1035,12 +1153,32 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
                       lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
                       name="SystemModstamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[Attempt__c]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[Attempt__c]"
+                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[Attempt__c]"
+                      name="Attempt__c"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]"
+                      name="ProgramCertification__c"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1052,7 +1190,7 @@
                       name="CreatedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="CreatedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[ExamPrepCourseAssignment__c]"
@@ -1075,7 +1213,7 @@
                       name="LastModifiedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[Name]"
@@ -1094,8 +1232,18 @@
                       scale="2" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[Attempt__c]"
+                      dataType="numeric"
+                      name="Attempt__c"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].ExternalColumns[ProgramCertification__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramCertification__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -1188,12 +1336,6 @@
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
                       lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[CreatedById]" />
                     <inputColumn
-                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
-                    <inputColumn
                       refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[ExamPrepCourseAssignment__c]"
                       cachedDataType="wstr"
                       cachedLength="18"
@@ -1221,12 +1363,6 @@
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedById]"
                       lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[LastModifiedById]" />
                     <inputColumn
-                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[LastModifiedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="LastModifiedDate"
-                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
-                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
-                    <inputColumn
                       refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[Practice_Date__c]"
                       cachedDataType="dbDate"
                       cachedName="Practice_Date__c"
@@ -1241,11 +1377,37 @@
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[Score__c]"
                       lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[Score__c]" />
                     <inputColumn
-                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[SystemModstamp]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="SystemModstamp"
+                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[ProgramCertification__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="ProgramCertification__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[ProgramCertification__c]"
+                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[ProgramCertification__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[Attempt__c]"
+                      cachedDataType="numeric"
+                      cachedName="Attempt__c"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[Attempt__c]"
+                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[Attempt__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[LastModifiedDate_]"
+                      cachedDataType="date"
+                      cachedName="LastModifiedDate_"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[SystemModstamp_]"
+                      cachedDataType="date"
+                      cachedName="SystemModstamp_"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
-                      lineageId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].Columns[CreatedDate_]"
+                      cachedDataType="date"
+                      cachedName="CreatedDate_"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1261,7 +1423,8 @@
                       name="CreatedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="CreatedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[ExamPrepCourseAssignment__c]"
@@ -1284,7 +1447,8 @@
                       name="LastModifiedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[Practice_Date__c]"
@@ -1299,8 +1463,19 @@
                       scale="2" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="26"
                       name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[Attempt__c]"
+                      dataType="numeric"
+                      name="Attempt__c"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input].ExternalColumns[ProgramCertification__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramCertification__c" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1332,8 +1507,13 @@
           </components>
           <paths>
             <path
-              refId="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+              refId="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
               endId="Package\from Salesforce to SQL\sf_PracticeExam__c.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+              endId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
               name="Salesforce Source Output"
               startId="Package\from Salesforce to SQL\Practice Exam.Outputs[Salesforce Source Output]" />
           </paths>
@@ -1389,6 +1569,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="292,42"
+          Id="Package\delete from Salesforce sf_PracticeExam__c"
+          TopLeft="611,211" />
+        <NodeLayout
           Size="193,42"
           Id="Package\from Salesforce to SQL"
           TopLeft="243.999994859099,233.842109062335" />
@@ -1430,10 +1614,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="292,42"
-          Id="Package\delete from Salesforce sf_PracticeExam__c"
-          TopLeft="611,211" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="757,211">
@@ -1471,69 +1651,6 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\from Salesforce to SQL">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\from Salesforce to SQL\Practice Exam"
-          TopLeft="316,205" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\from Salesforce to SQL\sf_PracticeExam__c"
-          TopLeft="473,337" />
-        <EdgeLayout
-          Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
-          TopLeft="391,247">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="171.5,90"
-              Start="0,0"
-              End="171.5,82.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41"
-                    Point2="0,45"
-                    Point3="4,45" />
-                  <mssgle:LineSegment
-                    End="167.5,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="167.5,45"
-                    Point2="171.5,45"
-                    Point3="171.5,49" />
-                  <mssgle:LineSegment
-                    End="171.5,82.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\from Salesforce to SQL\sf_PracticeExam__c">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\delete from Salesforce sf_PracticeExam__c">
     <LayoutInfo>
@@ -1584,5 +1701,106 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\from Salesforce to SQL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="197,42"
+          Id="Package\from Salesforce to SQL\sf_PracticeExam__c"
+          TopLeft="473,337" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\from Salesforce to SQL\Practice Exam"
+          TopLeft="316,205" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\from Salesforce to SQL\Data Conversion"
+          TopLeft="617,185" />
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+          TopLeft="466,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151,-20"
+              Start="0,0"
+              End="143.5,-20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.5,0"
+                    Point2="75.5,0"
+                    Point3="75.5,-4" />
+                  <mssgle:LineSegment
+                    End="75.5,-16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.5,-16"
+                    Point2="75.5,-20"
+                    Point3="79.5,-20" />
+                  <mssgle:LineSegment
+                    End="143.5,-20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
+          TopLeft="705,227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-133.5,110"
+              Start="0,0"
+              End="-133.5,102.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51"
+                    Point2="0,55"
+                    Point3="-4,55" />
+                  <mssgle:LineSegment
+                    End="-129.5,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-129.5,55"
+                    Point2="-133.5,55"
+                    Point3="-133.5,59" />
+                  <mssgle:LineSegment
+                    End="-133.5,102.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\from Salesforce to SQL\sf_PracticeExam__c">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_Contacts"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{004ED50E-6061-4243-8C3E-4CCBBFC3D749}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{092480E3-A8E9-4765-B02D-3C5DB6CE6715}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -351,24 +351,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{11D81C0D-34BD-4CE7-806E-99BC437D8539}"
-      DTS:ObjectName="Salesforce Connection Manager">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;RedirectUri=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAQbG08/l/+kcH/9I0O5O1rAAAAAASAAACgAAAAEAAAAArzfeT0/3qSqyhjvYYtQ24gAAAAEC8j2oV5C3WY6dtwCRj04S5LxumsMfOdf6RxNjqVy94UAAAAbZvD+kT7q2oRN46yRVlpuRXncYk</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA7RqxaeBIb9svk4+wNuRnPAAAAAASAAACgAAAAEAAAABBbgDAwgsofWhnbCr16Qyc4AAAA75uYyi56g4RC5zeAjPViI9GTrNiIEJvdaMC/U0m0s2HvvbyJXvLuJ/NE0MzmZv1k4QkWRZOPcikUAAAAmSepOkULaWINIJPApHoOxTYibxw</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -415,7 +397,8 @@
               contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2023 KingswaySoft Inc."
               description="Extract data from Salesforce."
               name="Contact"
-              usesDispositions="true">
+              usesDispositions="true"
+              version="1">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -471,8 +454,8 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\Contact.Connections[Salesforce]"
-                  connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -609,6 +592,36 @@
                       length="40"
                       lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Phone]"
                       name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Contact_Record_Type_LMS__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Contact_Record_Type_LMS__c]"
+                      length="1300"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Contact_Record_Type_LMS__c]"
+                      name="Contact_Record_Type_LMS__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Mailing_State_LMS__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Mailing_State_LMS__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Mailing_State_LMS__c]"
+                      name="Mailing_State_LMS__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[NHA_registered_email__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[NHA_registered_email__c]"
+                      length="80"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[NHA_registered_email__c]"
+                      name="NHA_registered_email__c"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -4694,6 +4707,16 @@
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[X90_days_after_program_completion__c]"
                       dataType="dbDate"
                       name="X90_days_after_program_completion__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Contact_Record_Type_LMS__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Contact_Record_Type_LMS__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Mailing_State_LMS__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Mailing_State_LMS__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -4928,6 +4951,11 @@
                       dataType="wstr"
                       length="40"
                       name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[NHA_Registered_email__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="NHA_Registered_email__c" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
