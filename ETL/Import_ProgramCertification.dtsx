@@ -1,0 +1,2016 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/24/2023 10:16:48 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MED-VDIPWV08"
+  DTS:CreatorName="MED\ccarrillo"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{59088C15-0D39-47BD-B088-70BF77A7A7E3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Import_ProgramCertification"
+  DTS:PackageType="5"
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{7910ED66-D202-4242-BFF0-10338CDBAC8B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FlatFile_NHA_Certification_Exam]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{10912BFE-1331-4BA6-B7F0-8388E56D9CA8}"
+      DTS:ObjectName="FlatFile_NHA_Certification_Exam">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Path_NHACertificationExam] + "\\" + @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Certification Exam\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{1D1058D0-9842-4603-A8F1-78B63115A32D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{78C4CF80-85C6-4629-B654-B883232387A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Student Email"
+              DTS:DTSID="{272DDAB1-1D61-435C-8247-1B2AD7A0E642}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Institution"
+              DTS:DTSID="{D8535610-E66B-41A7-8AD4-606C092707C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cert Product"
+              DTS:DTSID="{F84A32B0-9D35-46A1-B050-F219CB73FDFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductNumber"
+              DTS:DTSID="{EA68BDB6-FF30-4CEA-A795-3C2A00D9D95F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHA Exam Registration Date"
+              DTS:DTSID="{80F65881-A79B-48D8-96B3-90A7C09CF31E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Order Taken"
+              DTS:DTSID="{3F1B0378-B42A-4DB7-A92D-9FF13CE727DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mode of Testing"
+              DTS:DTSID="{B52DEF0B-AF24-41D9-BCB6-08270876DFB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Approval Date"
+              DTS:DTSID="{28E5A4B3-1DB2-4A1E-ACFE-28C787829B6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Planned Exam Date"
+              DTS:DTSID="{E134237F-B945-445D-9262-E6F7BC63ABB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual Exam Date"
+              DTS:DTSID="{59521EC3-C433-40A0-9E46-F5AD4C15775A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{E7F6D656-5972-4238-A426-A6199392FE01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Result"
+              DTS:DTSID="{A7A284C9-2A0A-4593-81D9-F10E7D774274}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cetification # Awarded"
+              DTS:DTSID="{935BAE38-C7BF-4211-A0F2-FAA0805D27BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Current As Of"
+              DTS:DTSID="{6A815510-B933-47E6-B685-9BE42FC6C567}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FlatFile_NHA_Certification_Exam_Loaded]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{B2B58C46-B16F-42AF-B9EF-0380C0EA16E6}"
+      DTS:ObjectName="FlatFile_NHA_Certification_Exam_Loaded">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Path_NHACertificationExam_LoadFiles] + "\\" +  @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Certification Exam\LoadFiles\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{1D1058D0-9842-4603-A8F1-78B63115A32D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{78C4CF80-85C6-4629-B654-B883232387A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Student Email"
+              DTS:DTSID="{272DDAB1-1D61-435C-8247-1B2AD7A0E642}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Institution"
+              DTS:DTSID="{D8535610-E66B-41A7-8AD4-606C092707C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cert Product"
+              DTS:DTSID="{F84A32B0-9D35-46A1-B050-F219CB73FDFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductNumber"
+              DTS:DTSID="{EA68BDB6-FF30-4CEA-A795-3C2A00D9D95F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHA Exam Registration Date"
+              DTS:DTSID="{80F65881-A79B-48D8-96B3-90A7C09CF31E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Order Taken"
+              DTS:DTSID="{3F1B0378-B42A-4DB7-A92D-9FF13CE727DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mode of Testing"
+              DTS:DTSID="{B52DEF0B-AF24-41D9-BCB6-08270876DFB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Approval Date"
+              DTS:DTSID="{28E5A4B3-1DB2-4A1E-ACFE-28C787829B6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Planned Exam Date"
+              DTS:DTSID="{E134237F-B945-445D-9262-E6F7BC63ABB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual Exam Date"
+              DTS:DTSID="{59521EC3-C433-40A0-9E46-F5AD4C15775A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{E7F6D656-5972-4238-A426-A6199392FE01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exam Result"
+              DTS:DTSID="{A7A284C9-2A0A-4593-81D9-F10E7D774274}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cetification # Awarded"
+              DTS:DTSID="{935BAE38-C7BF-4211-A0F2-FAA0805D27BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Current As Of"
+              DTS:DTSID="{6A815510-B933-47E6-B685-9BE42FC6C567}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7E61A4AE-98E5-4FB0-8672-346D0742FC53}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{45492BA3-B052-4DFC-860A-2CF093DA3BFC}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Path_NHACertificationExam_LoadFiles] + &quot;\\&quot;  + RIGHT( @[User::FileName], FINDSTRING( REVERSE( @[User::FileName] ), &quot;\\&quot;, 1 )   )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadFileName">
+      <DTS:VariableValue
+        DTS:DataType="8">\\MED-FILPWV02\data$\Users\ccarrillo\Downloads\ETLInputFiles\Data Automation and Standardization Project\Data Loads\Example Files\NHA Certification Exam\LoadFiles\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\from Salesforce to SQL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A7BCB328-3473-4346-8AE4-27349E0F3BFE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="from Salesforce to SQL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\from Salesforce to SQL\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[SystemModstamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SystemModstamp"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastModifiedDate"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_date]"
+                      name="SystemModstamp_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[SystemModstamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_date]"
+                      name="LastModifiedDate_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_date]"
+                      name="CreatedDate_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\from Salesforce to SQL\ProgramCertification"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2023 KingswaySoft Inc."
+              description="Extract data from Salesforce."
+              name="ProgramCertification"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of source data from Salesforce"
+                  expressionType="Notify"
+                  name="SourceType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Salesforce.SalesforceSourceType">0</property>
+                <property
+                  dataType="System.String"
+                  description="Salesforce object to retrieve data from."
+                  expressionType="Notify"
+                  name="SourceObject">ProgramCertification__c</property>
+                <property
+                  dataType="System.String"
+                  description="Salesforce object query statement."
+                  expressionType="Notify"
+                  name="ObjectQuery"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the batch size of the query."
+                  expressionType="Notify"
+                  name="BatchSize">100</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether deleted or archived records should be returned."
+                  expressionType="Notify"
+                  name="IncludeDeletedArchived">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to use Salesforce Bulk API to read data."
+                  expressionType="Notify"
+                  name="UseBulkApi">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the output timezone for Salesforce datetime values."
+                  expressionType="Notify"
+                  name="OutputTimezone"
+                  typeConverter="KingswaySoft.IntegrationToolkit.Common.DescriptiveEnumTypeConverter`1[[KingswaySoft.IntegrationToolkit.Salesforce.SfdcSourceOutputTimezone" />
+                <property
+                  dataType="System.String"
+                  description="Specify the PK Chunking Header that helps with Bulk API data read performance."
+                  expressionType="Notify"
+                  name="PKChunkingHeader"></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.Salesforce.SalesforceSourceComponent</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specify whether to use timezone-aware data types for those datetime fields."
+                  expressionType="Notify"
+                  name="UseTimezoneAwareDataTypes">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\from Salesforce to SQL\ProgramCertification.Connections[Salesforce]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
+                  description="Salesforce Connection"
+                  name="Salesforce" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output]"
+                  name="Salesforce Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CertificationDate__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CertificationDate__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CertificationDate__c]"
+                      name="CertificationDate__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Required__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Required__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Required__c]"
+                      name="Clinical_Required__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Address__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Address__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Address__c]"
+                      name="Clinical_Site_Address__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_City__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_City__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_City__c]"
+                      name="Clinical_Site_City__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Contact_Name__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Contact_Name__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Contact_Name__c]"
+                      name="Clinical_Site_Contact_Name__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Contact_Phone_Number__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Contact_Phone_Number__c]"
+                      length="40"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Contact_Phone_Number__c]"
+                      name="Clinical_Site_Contact_Phone_Number__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Name__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Name__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Name__c]"
+                      name="Clinical_Site_Name__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Requesting_Sponsorship__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Requesting_Sponsorship__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Requesting_Sponsorship__c]"
+                      name="Clinical_Site_Requesting_Sponsorship__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Requirement_Fulfilled__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Requirement_Fulfilled__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Requirement_Fulfilled__c]"
+                      name="Clinical_Site_Requirement_Fulfilled__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_State__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_State__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_State__c]"
+                      name="Clinical_Site_State__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Zip__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Zip__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Zip__c]"
+                      name="Clinical_Site_Zip__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ClinicalSiteContactEmail__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ClinicalSiteContactEmail__c]"
+                      length="80"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ClinicalSiteContactEmail__c]"
+                      name="ClinicalSiteContactEmail__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Completed_Externship__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Completed_Externship__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Completed_Externship__c]"
+                      name="Completed_Externship__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Confirmed_Placement__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Confirmed_Placement__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Confirmed_Placement__c]"
+                      name="Confirmed_Placement__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedById]"
+                      name="CreatedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Employer_Relations_Coordinator__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Employer_Relations_Coordinator__c]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Employer_Relations_Coordinator__c]"
+                      name="Employer_Relations_Coordinator__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Calendly_Link__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ERC_Calendly_Link__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Calendly_Link__c]"
+                      name="ERC_Calendly_Link__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Email__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ERC_Email__c]"
+                      length="80"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Email__c]"
+                      name="ERC_Email__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Phone__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ERC_Phone__c]"
+                      length="40"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Phone__c]"
+                      name="ERC_Phone__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Account__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Account__c]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Account__c]"
+                      name="Externship_Account__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Date_Enrollment_App_Received__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Date_Enrollment_App_Received__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Date_Enrollment_App_Received__c]"
+                      name="Externship_Date_Enrollment_App_Received__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Date_Enrollment_App_Sent__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Date_Enrollment_App_Sent__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Date_Enrollment_App_Sent__c]"
+                      name="Externship_Date_Enrollment_App_Sent__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_End_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_End_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_End_Date__c]"
+                      name="Externship_End_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Notes__c]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Notes__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Notes__c]"
+                      name="Externship_Notes__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Opt_Out__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Opt_Out__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Opt_Out__c]"
+                      name="Externship_Opt_Out__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Start_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Start_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Start_Date__c]"
+                      name="Externship_Start_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Status__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Status__c]"
+                      name="Externship_Status__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[IsDeleted]"
+                      name="IsDeleted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedById]"
+                      name="LastModifiedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      length="80"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[OwnerId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[OwnerId]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[OwnerId]"
+                      name="OwnerId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Primary_Site_Contact__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Primary_Site_Contact__c]"
+                      length="100"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Primary_Site_Contact__c]"
+                      name="Primary_Site_Contact__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ProgramAssignment__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ProgramAssignment__c]"
+                      length="18"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ProgramAssignment__c]"
+                      name="ProgramAssignment__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Requires_Externship__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Requires_Externship__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Requires_Externship__c]"
+                      name="Requires_Externship__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[RX3000_Week_10_Outreach__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[RX3000_Week_10_Outreach__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[RX3000_Week_10_Outreach__c]"
+                      name="RX3000_Week_10_Outreach__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[RX3000_Week_2_Outreach__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[RX3000_Week_2_Outreach__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[RX3000_Week_2_Outreach__c]"
+                      name="RX3000_Week_2_Outreach__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Scrubs_and_Stethoscope_Email_Sent_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Scrubs_and_Stethoscope_Email_Sent_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Scrubs_and_Stethoscope_Email_Sent_Date__c]"
+                      name="Scrubs_and_Stethoscope_Email_Sent_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Site_Contact_Information__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Site_Contact_Information__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Site_Contact_Information__c]"
+                      name="Site_Contact_Information__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[StudentClinicalSiteInfoFormSubmit__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[StudentClinicalSiteInfoFormSubmit__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[StudentClinicalSiteInfoFormSubmit__c]"
+                      name="StudentClinicalSiteInfoFormSubmit__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
+                      name="SystemModstamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[VA_Externship_Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[VA_Externship_Status__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[VA_Externship_Status__c]"
+                      name="VA_Externship_Status__c"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CertificationDate__c]"
+                      dataType="dbDate"
+                      name="CertificationDate__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Required__c]"
+                      dataType="bool"
+                      name="Clinical_Required__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Address__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Address__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_City__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_City__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Contact_Name__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Contact_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Contact_Phone_Number__c]"
+                      dataType="wstr"
+                      length="40"
+                      name="Clinical_Site_Contact_Phone_Number__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Name__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Requesting_Sponsorship__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Requesting_Sponsorship__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Requirement_Fulfilled__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Requirement_Fulfilled__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_State__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_State__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Clinical_Site_Zip__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Zip__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ClinicalSiteContactEmail__c]"
+                      dataType="wstr"
+                      length="80"
+                      name="ClinicalSiteContactEmail__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Completed_Externship__c]"
+                      dataType="bool"
+                      name="Completed_Externship__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Confirmed_Placement__c]"
+                      dataType="dbDate"
+                      name="Confirmed_Placement__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Employer_Relations_Coordinator__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Employer_Relations_Coordinator__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ERC_Calendly_Link__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="ERC_Calendly_Link__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ERC_Email__c]"
+                      dataType="wstr"
+                      length="80"
+                      name="ERC_Email__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ERC_Phone__c]"
+                      dataType="wstr"
+                      length="40"
+                      name="ERC_Phone__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Account__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Externship_Account__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Date_Enrollment_App_Received__c]"
+                      dataType="dbDate"
+                      name="Externship_Date_Enrollment_App_Received__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Date_Enrollment_App_Sent__c]"
+                      dataType="dbDate"
+                      name="Externship_Date_Enrollment_App_Sent__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_End_Date__c]"
+                      dataType="dbDate"
+                      name="Externship_End_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Notes__c]"
+                      dataType="nText"
+                      name="Externship_Notes__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Opt_Out__c]"
+                      dataType="bool"
+                      name="Externship_Opt_Out__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Start_Date__c]"
+                      dataType="dbDate"
+                      name="Externship_Start_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Externship_Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Externship_Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
+                      dataType="bool"
+                      name="IsDeleted" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="LastModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[OwnerId]"
+                      dataType="wstr"
+                      length="18"
+                      name="OwnerId" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Primary_Site_Contact__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="Primary_Site_Contact__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[ProgramAssignment__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramAssignment__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Requires_Externship__c]"
+                      dataType="bool"
+                      name="Requires_Externship__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[RX3000_Week_10_Outreach__c]"
+                      dataType="bool"
+                      name="RX3000_Week_10_Outreach__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[RX3000_Week_2_Outreach__c]"
+                      dataType="bool"
+                      name="RX3000_Week_2_Outreach__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Scrubs_and_Stethoscope_Email_Sent_Date__c]"
+                      dataType="dbDate"
+                      name="Scrubs_and_Stethoscope_Email_Sent_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Site_Contact_Information__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Site_Contact_Information__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[StudentClinicalSiteInfoFormSubmit__c]"
+                      dataType="dbDate"
+                      name="StudentClinicalSiteInfoFormSubmit__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
+                      dataType="dbTimeStamp"
+                      name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[VA_Externship_Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="VA_Externship_Status__c" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\from Salesforce to SQL\sf_ProgramCertification"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="sf_ProgramCertification"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dwh].[sf_ProgramCertification]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\from Salesforce to SQL\sf_ProgramCertification.Connections[OleDbConnection]"
+                  connectionManagerID="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ETLDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[CreatedById]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="CreatedById"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedById]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[IsDeleted]"
+                      cachedDataType="bool"
+                      cachedName="IsDeleted"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[IsDeleted]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[LastModifiedById]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="LastModifiedById"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedById]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedById]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[OwnerId]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="OwnerId"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[OwnerId]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[OwnerId]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[SystemModstamp_date]"
+                      cachedDataType="date"
+                      cachedName="SystemModstamp_date"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[SystemModstamp_date]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[LastModifiedDate_date]"
+                      cachedDataType="date"
+                      cachedName="LastModifiedDate_date"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[LastModifiedDate_date]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[CreatedDate_date]"
+                      cachedDataType="date"
+                      cachedName="CreatedDate_date"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[CreatedDate_date]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Required__c]"
+                      cachedDataType="bool"
+                      cachedName="Clinical_Required__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Required__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Required__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[CertificationDate__c]"
+                      cachedDataType="dbDate"
+                      cachedName="CertificationDate__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[CertificationDate__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CertificationDate__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_Address__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_Address__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Address__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Address__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_City__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_City__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_City__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_City__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_Contact_Name__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_Contact_Name__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Contact_Name__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Contact_Name__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_Contact_Phone_Number__c]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Clinical_Site_Contact_Phone_Number__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Contact_Phone_Number__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Contact_Phone_Number__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_Name__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_Name__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Name__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Name__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_Requesting_Sponsorship__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_Requesting_Sponsorship__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Requesting_Sponsorship__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Requesting_Sponsorship__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_Requirement_Fulfilled__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_Requirement_Fulfilled__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Requirement_Fulfilled__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Requirement_Fulfilled__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_State__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_State__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_State__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_State__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Clinical_Site_Zip__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Clinical_Site_Zip__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Zip__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Clinical_Site_Zip__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[ClinicalSiteContactEmail__c]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="ClinicalSiteContactEmail__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ClinicalSiteContactEmail__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ClinicalSiteContactEmail__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Completed_Externship__c]"
+                      cachedDataType="bool"
+                      cachedName="Completed_Externship__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Completed_Externship__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Completed_Externship__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Confirmed_Placement__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Confirmed_Placement__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Confirmed_Placement__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Confirmed_Placement__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Employer_Relations_Coordinator__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Employer_Relations_Coordinator__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Employer_Relations_Coordinator__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Employer_Relations_Coordinator__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[ERC_Calendly_Link__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ERC_Calendly_Link__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ERC_Calendly_Link__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Calendly_Link__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[ERC_Email__c]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="ERC_Email__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ERC_Email__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Email__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[ERC_Phone__c]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ERC_Phone__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ERC_Phone__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ERC_Phone__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_Account__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Externship_Account__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Account__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Account__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_Date_Enrollment_App_Received__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Externship_Date_Enrollment_App_Received__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Date_Enrollment_App_Received__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Date_Enrollment_App_Received__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_Date_Enrollment_App_Sent__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Externship_Date_Enrollment_App_Sent__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Date_Enrollment_App_Sent__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Date_Enrollment_App_Sent__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_End_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Externship_End_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_End_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_End_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_Notes__c]"
+                      cachedDataType="nText"
+                      cachedName="Externship_Notes__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Notes__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Notes__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_Opt_Out__c]"
+                      cachedDataType="bool"
+                      cachedName="Externship_Opt_Out__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Opt_Out__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Opt_Out__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_Start_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Externship_Start_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Start_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Start_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Externship_Status__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Externship_Status__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Status__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Externship_Status__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Primary_Site_Contact__c]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Primary_Site_Contact__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Primary_Site_Contact__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Primary_Site_Contact__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[ProgramAssignment__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="ProgramAssignment__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ProgramAssignment__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[ProgramAssignment__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Requires_Externship__c]"
+                      cachedDataType="bool"
+                      cachedName="Requires_Externship__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Requires_Externship__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Requires_Externship__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[RX3000_Week_10_Outreach__c]"
+                      cachedDataType="bool"
+                      cachedName="RX3000_Week_10_Outreach__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[RX3000_Week_10_Outreach__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[RX3000_Week_10_Outreach__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[RX3000_Week_2_Outreach__c]"
+                      cachedDataType="bool"
+                      cachedName="RX3000_Week_2_Outreach__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[RX3000_Week_2_Outreach__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[RX3000_Week_2_Outreach__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Scrubs_and_Stethoscope_Email_Sent_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Scrubs_and_Stethoscope_Email_Sent_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Scrubs_and_Stethoscope_Email_Sent_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Scrubs_and_Stethoscope_Email_Sent_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[Site_Contact_Information__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Site_Contact_Information__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Site_Contact_Information__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[Site_Contact_Information__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].Columns[StudentClinicalSiteInfoFormSubmit__c]"
+                      cachedDataType="dbDate"
+                      cachedName="StudentClinicalSiteInfoFormSubmit__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[StudentClinicalSiteInfoFormSubmit__c]"
+                      lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[StudentClinicalSiteInfoFormSubmit__c]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="wstr"
+                      length="26"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                      dataType="bool"
+                      name="IsDeleted" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedById]"
+                      dataType="wstr"
+                      length="18"
+                      name="LastModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      dataType="wstr"
+                      length="26"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[OwnerId]"
+                      dataType="wstr"
+                      length="18"
+                      name="OwnerId" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[SystemModstamp]"
+                      dataType="wstr"
+                      length="26"
+                      name="SystemModstamp" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Required__c]"
+                      dataType="bool"
+                      name="Clinical_Required__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[CertificationDate__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="CertificationDate__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Address__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Address__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_City__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_City__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Contact_Name__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Contact_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Contact_Phone_Number__c]"
+                      dataType="wstr"
+                      length="40"
+                      name="Clinical_Site_Contact_Phone_Number__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Name__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Requesting_Sponsorship__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Requesting_Sponsorship__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Requirement_Fulfilled__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Requirement_Fulfilled__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_State__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_State__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Clinical_Site_Zip__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Clinical_Site_Zip__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ClinicalSiteContactEmail__c]"
+                      dataType="wstr"
+                      length="80"
+                      name="ClinicalSiteContactEmail__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Completed_Externship__c]"
+                      dataType="bool"
+                      name="Completed_Externship__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Confirmed_Placement__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Confirmed_Placement__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Employer_Relations_Coordinator__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Employer_Relations_Coordinator__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ERC_Calendly_Link__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="ERC_Calendly_Link__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ERC_Email__c]"
+                      dataType="wstr"
+                      length="80"
+                      name="ERC_Email__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ERC_Phone__c]"
+                      dataType="wstr"
+                      length="40"
+                      name="ERC_Phone__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Account__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Externship_Account__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Date_Enrollment_App_Received__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Externship_Date_Enrollment_App_Received__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Date_Enrollment_App_Sent__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Externship_Date_Enrollment_App_Sent__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_End_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Externship_End_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Notes__c]"
+                      dataType="nText"
+                      name="Externship_Notes__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Opt_Out__c]"
+                      dataType="bool"
+                      name="Externship_Opt_Out__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Start_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Externship_Start_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Externship_Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Externship_Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Primary_Site_Contact__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="Primary_Site_Contact__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[ProgramAssignment__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="ProgramAssignment__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Requires_Externship__c]"
+                      dataType="bool"
+                      name="Requires_Externship__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[RX3000_Week_10_Outreach__c]"
+                      dataType="bool"
+                      name="RX3000_Week_10_Outreach__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[RX3000_Week_2_Outreach__c]"
+                      dataType="bool"
+                      name="RX3000_Week_2_Outreach__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Scrubs_and_Stethoscope_Email_Sent_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Scrubs_and_Stethoscope_Email_Sent_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[Site_Contact_Information__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Site_Contact_Information__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input].ExternalColumns[StudentClinicalSiteInfoFormSubmit__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="StudentClinicalSiteInfoFormSubmit__c" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\from Salesforce to SQL\sf_ProgramCertification.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\sf_ProgramCertification.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\sf_ProgramCertification.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from Salesforce to SQL\sf_ProgramCertification.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
+              endId="Package\from Salesforce to SQL\sf_ProgramCertification.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\from Salesforce to SQL\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+              endId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input]"
+              name="Salesforce Source Output"
+              startId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate sf_ProgramCertification"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{740F45A4-ADC8-4DC1-93B0-3D93F6A04C42}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate sf_ProgramCertification"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}"
+          SQLTask:SqlStatementSource="truncate table [dwh].[sf_ProgramCertification]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6FE76A1B-CDB6-4540-ADFC-9220F416A213}"
+      DTS:From="Package\truncate sf_ProgramCertification"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\from Salesforce to SQL" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\from Salesforce to SQL"
+          TopLeft="243.999994859099,233.842109062335" />
+        <NodeLayout
+          Size="267,49"
+          Id="Package\truncate sf_ProgramCertification"
+          TopLeft="230,95" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="363.5,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.000005140901,89.842109062335"
+              Start="0,0"
+              End="-23.000005140901,82.342109062335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.9210545311675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.9210545311675"
+                    Point2="0,44.9210545311675"
+                    Point3="-4,44.9210545311675" />
+                  <mssgle:LineSegment
+                    End="-19.000005140901,44.9210545311675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.000005140901,44.9210545311675"
+                    Point2="-23.000005140901,44.9210545311675"
+                    Point3="-23.000005140901,48.9210545311675" />
+                  <mssgle:LineSegment
+                    End="-23.000005140901,82.342109062335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\from Salesforce to SQL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\from Salesforce to SQL\ProgramCertification"
+          TopLeft="316,205" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\from Salesforce to SQL\Data Conversion"
+          TopLeft="733,253" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\from Salesforce to SQL\sf_ProgramCertification"
+          TopLeft="419,318" />
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
+          TopLeft="495,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238,48"
+              Start="0,0"
+              End="230.5,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="115,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="115,0"
+                    Point2="119,0"
+                    Point3="119,4" />
+                  <mssgle:LineSegment
+                    End="119,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119,44"
+                    Point2="119,48"
+                    Point3="123,48" />
+                  <mssgle:LineSegment
+                    End="230.5,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\from Salesforce to SQL.Paths[Data Conversion Output]"
+          TopLeft="813.5,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-297.5,23"
+              Start="0,0"
+              End="-297.5,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.5"
+                    Point2="0,11.5"
+                    Point3="-4,11.5" />
+                  <mssgle:LineSegment
+                    End="-293.5,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-293.5,11.5"
+                    Point2="-297.5,11.5"
+                    Point3="-297.5,15.5" />
+                  <mssgle:LineSegment
+                    End="-297.5,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\from Salesforce to SQL\sf_ProgramCertification">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
