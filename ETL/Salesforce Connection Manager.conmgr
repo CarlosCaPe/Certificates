@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Salesforce Connection Manager"
-  DTS:DTSID="{48E88658-5C14-4715-93A1-A16937345712}"
+  DTS:DTSID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}"
   DTS:CreationName="Salesforce (KingswaySoft)">
   <DTS:ObjectData>
     <SalesforceConnectionManager
       ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;RedirectUri=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
       ConnectByProxy="False">
       <Password
-        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqCx2bXBEJEye2aaFc0vb9AAAAAACAAAAAAADZgAAwAAAABAAAABHrFSYeggsUw/TcJTh2QskAAAAAASAAACgAAAAEAAAAN+X56IilX3h5xlU0nkzJwhYAAAARm94tnP2sANEAzg+GTInpUME4MGh3VaEXm4yyKnW2rJj79WH4ZVDEj4rckY6nCPGqnjGkBhbskfzArifSDRRTdmUKW8TGgTZ1DgB6tNKBhnoR39Z95XQhBQAAABEZ2CQ8jZx6oMTCNmJZx7Sglsa1w==</Password>
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqCx2bXBEJEye2aaFc0vb9AAAAAACAAAAAAADZgAAwAAAABAAAABM4ksln6JDX55ocktssWkzAAAAAASAAACgAAAAEAAAAOYShXrgrYiH2oABqqNO69NYAAAAPfE+nBLlZEtAvL2Q6dRSOf+XbH6E1whsEfGG6nIqejmr9HFFxT17dzBjKNcz9cmdUVi0nZKSYGsI32cTHsS2oqfPdr0M0GOuzskaOUKqvsy4YmgaBiPEqxQAAABiSxw4ofPnbZC61Fcu+WPXA/Y4MA==</Password>
       <SecurityToken
-        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqCx2bXBEJEye2aaFc0vb9AAAAAACAAAAAAADZgAAwAAAABAAAABd0harO+WalHioK3l3wJd8AAAAAASAAACgAAAAEAAAACZF6HnRZWPI2LGkOrvc+7lwAAAASG3FcbPNrmwI0ComctmLUP5/mBqWH9fvWmq46f5064i3cviTYoQUGKgbTnZbuZIXgYuUXFPtiVSuD1zAeCAxy30XDuYN5Xxim93/mbqK3agAJpyoRs2VOf/jVwU2PZtKXmek57UvVdmwKpPHgxiNDBQAAADZtjja6+ssYEelG0d3+hYHYep0ow==</SecurityToken>
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqCx2bXBEJEye2aaFc0vb9AAAAAACAAAAAAADZgAAwAAAABAAAABOnEoI+bK7oVy93RumhtswAAAAAASAAACgAAAAEAAAAA308un/FsxNwMHEDgH7O1VwAAAAT335MvW3MSrAKQ0Ojmt6MoYHuj7ILJ8sjTrl+gBL6CihHqU6Po1TEBfEYA360iDPyZzk5vOWSUYT9eTH3ZA31gRXGPmlZwVi0kuzBw6iY7ChJ6N5nuz/aN3Zl9iCE1DGl+7Ycz6GVrSZQP5PgR0P2xQAAACjgE1PMizWBZvqwMVHAL4RQn3NTA==</SecurityToken>
     </SalesforceConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

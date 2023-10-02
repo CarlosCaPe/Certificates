@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{F5C94D23-CFF6-44BF-BDE0-674CC8042550}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Export_NHA_CertificationAttempt"
   DTS:PackageType="5"
-  DTS:VersionBuild="115"
-  DTS:VersionGUID="{9B0A9986-3982-4300-9CB5-2942159FE614}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{D189D5FA-A4A3-48B8-91BF-7953D2E96DD5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -372,24 +372,6 @@
           DTS:ConnectionString="Data Source=MED-SQLPWV01-PC;Initial Catalog=ETLDB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Export_NHA_CertificationAttempt-{F047A0BD-EDDC-4C14-8148-4F5AB44439AA}MED-SQLPWV01-PC.ETLDB;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}"
-      DTS:ObjectName="Salesforce Connection Manager">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;RedirectUri=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAThRU7SSVWUWF0LB4N4RAlwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAArAdrAxDutyxKjrH8/xEQLAAAAAASAAACgAAAAEAAAAOHFw/2RSfD3q3Lvcsvpms0gAAAAMZQ5/fTlr+mBWwQiGX4GJ8Tbt/nyhisdNAJ4nsjmIRIUAAAAzP5G6YQxqkE/+Em0oOR4WBjVJDk</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAThRU7SSVWUWF0LB4N4RAlwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAeI32RxOeFIwVSp/Ba9zpHAAAAAASAAACgAAAAEAAAANk057igMW+xOsayKziBir04AAAAFfTSsZqWALHTNhDqcFAoTLtg+8UXY0T4o3sK6q9lsjyjf8J55Z0XSrzcs8g6NBYVivYO9awj8t4UAAAAp0pIJ/dVaG9IOvG/zGXCt4g94sw</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -520,8 +502,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Certification Exam\from FILE to SQL\etl_NHA_Certification_Exam.Connections[OleDbConnection]"
-                      connectionManagerID="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}:invalid"
-                      connectionManagerRefId="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}:invalid"
+                      connectionManagerID="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[ETLDB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1438,7 +1420,7 @@
                       dataType="System.Int32"
                       description="Batch size"
                       expressionType="Notify"
-                      name="BatchSize">50</property>
+                      name="BatchSize">200</property>
                     <property
                       dataType="System.String"
                       description="Specify the External ID field to be used for Salesforce upsert action."
@@ -1493,8 +1475,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Connections[Salesforce]"
-                      connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                      connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                       description="Salesforce Connection"
                       name="Salesforce" />
                   </connections>
@@ -1532,7 +1514,9 @@
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ActualExamDate]" />
                         <inputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[Score]"
-                          cachedDataType="r8"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="Score"
                           externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Exam_Raw_Score__c]"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Score]" />
@@ -1545,23 +1529,10 @@
                           externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Exam_Result__c]"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ExamResult]" />
                         <inputColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[Case_Safe_ID_contacts__c]"
-                          cachedDataType="wstr"
-                          cachedLength="1300"
-                          cachedName="Case_Safe_ID_contacts__c"
-                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Contact__c]"
-                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\108:invalid" />
-                        <inputColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ProgramAssigment_Id]"
-                          cachedDataType="wstr"
-                          cachedLength="18"
-                          cachedName="ProgramAssigment_Id"
-                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Prog_Con_Assignment__c]"
-                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\111:invalid" />
-                        <inputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[NHAExamRegistrationDate]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="NHAExamRegistrationDate"
                           externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Registration_Date__c]"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[NHAExamRegistrationDate]" />
@@ -1574,13 +1545,6 @@
                           externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Registered_Program__c]"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[CertProduct]" />
                         <inputColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[id]"
-                          cachedDataType="wstr"
-                          cachedLength="18"
-                          cachedName="id"
-                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Id]"
-                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\107:invalid" />
-                        <inputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[DataCurrentAsOf]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -1588,6 +1552,57 @@
                           cachedName="DataCurrentAsOf"
                           externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Status_Updated_Date__c]"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[DataCurrentAsOf]" />
+                        <inputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[id]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Id]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[Attempt_Number__c]"
+                          cachedDataType="numeric"
+                          cachedName="Attempt_Number__c"
+                          cachedPrecision="19"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Attempt_Number__c]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Attempt_Number__c]" />
+                        <inputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[Case_Safe_ID_contacts__c]"
+                          cachedDataType="wstr"
+                          cachedLength="1300"
+                          cachedName="Case_Safe_ID_contacts__c"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Contact__c]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Case_Safe_ID_contacts__c]" />
+                        <inputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="69"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Name]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ProgramAssigment_Id]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="ProgramAssigment_Id"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Prog_Con_Assignment__c]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramAssigment_Id]" />
+                        <inputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[RegistrationStatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="RegistrationStatus"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Registration_Status__c]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[RegistrationStatus]" />
+                        <inputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ProgramCertificationId]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="ProgramCertificationId"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[ProgramCertification__c]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1922,7 +1937,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dwh].[NHA_Certification_Exam]</property>
+                      name="OpenRowset">[dwh].[v_NHA_Certification_Exam]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2035,11 +2050,12 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[NHAExamRegistrationDate]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[NHAExamRegistrationDate]"
-                          length="10"
+                          length="50"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[NHAExamRegistrationDate]"
                           name="NHAExamRegistrationDate"
                           truncationRowDisposition="FailComponent" />
@@ -2100,10 +2116,12 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Score]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Score]"
+                          length="50"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Score]"
                           name="Score"
                           truncationRowDisposition="FailComponent" />
@@ -2161,24 +2179,125 @@
                           name="ModifiedOn"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[status]"
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[status]"
-                          length="50"
-                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[status]"
-                          name="status"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          length="69"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Name]"
+                          name="Name"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[NHA_Certification_Exam_id]"
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Case_Safe_ID_contacts__c]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Case_Safe_ID_contacts__c]"
+                          length="1300"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Case_Safe_ID_contacts__c]"
+                          name="Case_Safe_ID_contacts__c"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[AccountID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[AccountID]"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[AccountID]"
+                          name="AccountID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramAssigment_Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramAssigment_Id]"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramAssigment_Id]"
+                          name="ProgramAssigment_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[enlighten__Contact__c]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[enlighten__Contact__c]"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[enlighten__Contact__c]"
+                          name="enlighten__Contact__c"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramCertificationId]"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]"
+                          name="ProgramCertificationId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[RegistrationStatus]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[RegistrationStatus]"
+                          length="10"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[RegistrationStatus]"
+                          name="RegistrationStatus"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Status]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                          length="50"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[status_order]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[NHA_Certification_Exam_id]"
-                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[NHA_Certification_Exam_id]"
-                          name="NHA_Certification_Exam_id"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[status_order]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[status_order]"
+                          name="status_order"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Attempt_Number__c]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Attempt_Number__c]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Attempt_Number__c]"
+                          name="Attempt_Number__c"
+                          precision="19"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[rn]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[rn]"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[rn]"
+                          name="rn"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -2221,9 +2340,7 @@
                           name="ProductNumber" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[NHAExamRegistrationDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbDate"
                           name="NHAExamRegistrationDate" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ExamOrderTaken]"
@@ -2239,27 +2356,19 @@
                           name="ModeofTesting" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ApprovalDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="ApprovalDate" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[PlannedExamDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="PlannedExamDate" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ActualExamDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="ActualExamDate" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Score]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="r8"
                           name="Score" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ExamResult]"
@@ -2275,9 +2384,7 @@
                           name="CetificationNumAwarded" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[DataCurrentAsOf]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="DataCurrentAsOf" />
                         <externalMetadataColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ModifiedBy]"
@@ -2290,15 +2397,66 @@
                           dataType="dbTimeStamp"
                           name="ModifiedOn" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="69"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="wstr"
+                          length="18"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Case_Safe_ID_contacts__c]"
+                          dataType="wstr"
+                          length="1300"
+                          name="Case_Safe_ID_contacts__c" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[AccountID]"
+                          dataType="wstr"
+                          length="18"
+                          name="AccountID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramAssigment_Id]"
+                          dataType="wstr"
+                          length="18"
+                          name="ProgramAssigment_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[enlighten__Contact__c]"
+                          dataType="wstr"
+                          length="18"
+                          name="enlighten__Contact__c" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramCertificationId]"
+                          dataType="wstr"
+                          length="18"
+                          name="ProgramCertificationId" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[RegistrationStatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RegistrationStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Status]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          name="status" />
+                          name="Status" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[NHA_Certification_Exam_id]"
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[status_order]"
                           dataType="i4"
-                          name="NHA_Certification_Exam_id" />
+                          name="status_order" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Attempt_Number__c]"
+                          dataType="numeric"
+                          name="Attempt_Number__c"
+                          precision="19" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[rn]"
+                          dataType="i8"
+                          name="rn" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2307,10 +2465,12 @@
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[NHA_Certification_Exam_id]"
-                          dataType="i4"
-                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[NHA_Certification_Exam_id]"
-                          name="NHA_Certification_Exam_id" />
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="69"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          name="Name" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                           codePage="1252"
@@ -2326,12 +2486,48 @@
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[LastName]"
                           name="LastName" />
                         <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[id]"
+                          dataType="wstr"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Case_Safe_ID_contacts__c]"
+                          dataType="wstr"
+                          length="1300"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Case_Safe_ID_contacts__c]"
+                          name="Case_Safe_ID_contacts__c" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[AccountID]"
+                          dataType="wstr"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[AccountID]"
+                          name="AccountID" />
+                        <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[StudentEmail]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[StudentEmail]"
                           name="StudentEmail" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramAssigment_Id]"
+                          dataType="wstr"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramAssigment_Id]"
+                          name="ProgramAssigment_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[enlighten__Contact__c]"
+                          dataType="wstr"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[enlighten__Contact__c]"
+                          name="enlighten__Contact__c" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramCertificationId]"
+                          dataType="wstr"
+                          length="18"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramCertificationId]"
+                          name="ProgramCertificationId" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Institution]"
                           codePage="1252"
@@ -2355,9 +2551,7 @@
                           name="ProductNumber" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[NHAExamRegistrationDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbDate"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[NHAExamRegistrationDate]"
                           name="NHAExamRegistrationDate" />
                         <outputColumn
@@ -2376,30 +2570,22 @@
                           name="ModeofTesting" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ApprovalDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ApprovalDate]"
                           name="ApprovalDate" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[PlannedExamDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[PlannedExamDate]"
                           name="PlannedExamDate" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ActualExamDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ActualExamDate]"
                           name="ActualExamDate" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Score]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="r8"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Score]"
                           name="Score" />
                         <outputColumn
@@ -2418,9 +2604,7 @@
                           name="CetificationNumAwarded" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[DataCurrentAsOf]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[DataCurrentAsOf]"
                           name="DataCurrentAsOf" />
                         <outputColumn
@@ -2436,12 +2620,35 @@
                           lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ModifiedOn]"
                           name="ModifiedOn" />
                         <outputColumn
-                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[status]"
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[RegistrationStatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[RegistrationStatus]"
+                          name="RegistrationStatus" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Status]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[status]"
-                          name="status" />
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[status_order]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[status_order]"
+                          name="status_order" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Attempt_Number__c]"
+                          dataType="numeric"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Attempt_Number__c]"
+                          name="Attempt_Number__c"
+                          precision="19" />
+                        <outputColumn
+                          refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[rn]"
+                          dataType="i8"
+                          lineageId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[rn]"
+                          name="rn" />
                         <outputColumn
                           refId="Package\Foreach Certification Exam\from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2625,27 +2832,27 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Foreach Certification Exam\from FILE to SQL"
           TopLeft="189.999994859099,159.842109062335" />
         <NodeLayout
-          Size="192.8,41.6"
+          Size="193,42"
           Id="Package\Foreach Certification Exam\from SQL to Salesforce"
           TopLeft="275,345" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Foreach Certification Exam\Move Files with Error"
           TopLeft="90,251" />
         <NodeLayout
-          Size="172,41.6"
+          Size="172,42"
           Id="Package\Foreach Certification Exam\Move Loaded Files"
           TopLeft="486,339" />
         <NodeLayout
-          Size="382.4,41.6"
+          Size="382,42"
           Id="Package\Foreach Certification Exam\SQL - sp_NHA_Certification_Exam_Merge"
           TopLeft="307.285707739847,246.939855382619" />
         <NodeLayout
-          Size="368.8,41.6"
+          Size="369,42"
           Id="Package\Foreach Certification Exam\SQL - Truncate NHA_Certification_Exam"
           TopLeft="33.499996758997,73.9473700952663" />
         <EdgeLayout
@@ -2823,8 +3030,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="702.4,510.4"
-          Size="702.4,552.8"
+          PanelSize="702,510"
+          Size="702,553"
           Id="Package\Foreach Certification Exam"
           TopLeft="168,118" />
       </GraphLayout>
@@ -2897,17 +3104,17 @@
     design-time-name="Package\Foreach Certification Exam\from SQL to Salesforce">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="100.8,41.6"
+          Size="101,42"
           Id="Package\Foreach Certification Exam\from SQL to Salesforce\SQL"
           TopLeft="239,86" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\Foreach Certification Exam\from SQL to Salesforce\Data Conversion"
           TopLeft="382,196" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination"
           TopLeft="184,301" />
         <EdgeLayout
@@ -2975,9 +3182,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-100,36.5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2992,7 +3197,7 @@
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
