@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{0DAB122B-B28B-42A0-BDE4-A901D1CCBC8B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_PracticeExam"
   DTS:PackageType="5"
-  DTS:VersionBuild="100"
-  DTS:VersionGUID="{C6A86CF5-592B-405E-9CDC-6A0112BA3EBC}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{C741D3C4-EFD3-4994-A39E-D3A0AE42C5A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -380,6 +380,7 @@
       DTS:refId="Package\delete from Salesforce sf_PracticeExam__c"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1b5f4aed-91f6-4e0a-8196-cd8b60f60e11}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
