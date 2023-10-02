@@ -8,9 +8,9 @@
       ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;RedirectUri=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
       ConnectByProxy="False">
       <Password
-        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/OFbsrbZzU+CQqB7V/ERuQAAAAACAAAAAAADZgAAwAAAABAAAAD9RICNlshTg+3w33HqtU7DAAAAAASAAACgAAAAEAAAAHfGk3w38zGt7uuQ8RQhS/dYAAAANXLR2e66V5QSA/30Vigy/8fnJoR6CRfaP+xsXJffUEmvMw/5LHK+4/NFvECeDDCR1D2sQ7ZNWWmOB8PkS5m9bviicHc+OtQF06GKkf02CDqbWA8XfO3vHBQAAACRyBLJBeiQV8egJEj5tOpNa0FCUQ==</Password>
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqCx2bXBEJEye2aaFc0vb9AAAAAACAAAAAAADZgAAwAAAABAAAABHrFSYeggsUw/TcJTh2QskAAAAAASAAACgAAAAEAAAAN+X56IilX3h5xlU0nkzJwhYAAAARm94tnP2sANEAzg+GTInpUME4MGh3VaEXm4yyKnW2rJj79WH4ZVDEj4rckY6nCPGqnjGkBhbskfzArifSDRRTdmUKW8TGgTZ1DgB6tNKBhnoR39Z95XQhBQAAABEZ2CQ8jZx6oMTCNmJZx7Sglsa1w==</Password>
       <SecurityToken
-        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/OFbsrbZzU+CQqB7V/ERuQAAAAACAAAAAAADZgAAwAAAABAAAACEnUnZ4hIYAQBYAKB3raSEAAAAAASAAACgAAAAEAAAANaipjylsyGVXQeMZZZg2bdwAAAAoejBENue2OTNavkaObW+Ft1M+5e1I8yZjxnR9LX45PO8FjuVrKDVzkQ4KrzW8dl9LEX+Pqu4dRESyGMFhoD4DEE1nLz1bD7NStzx3Z1O7Gfb9Ssjz3dDp9EZEQrryV61TTgYvbneyhBxHGhs9CHkchQAAABI43H4dpK85c/2wgo/pbRIOw1rdQ==</SecurityToken>
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqCx2bXBEJEye2aaFc0vb9AAAAAACAAAAAAADZgAAwAAAABAAAABd0harO+WalHioK3l3wJd8AAAAAASAAACgAAAAEAAAACZF6HnRZWPI2LGkOrvc+7lwAAAASG3FcbPNrmwI0ComctmLUP5/mBqWH9fvWmq46f5064i3cviTYoQUGKgbTnZbuZIXgYuUXFPtiVSuD1zAeCAxy30XDuYN5Xxim93/mbqK3agAJpyoRs2VOf/jVwU2PZtKXmek57UvVdmwKpPHgxiNDBQAAADZtjja6+ssYEelG0d3+hYHYep0ow==</SecurityToken>
     </SalesforceConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
