@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{A5F20695-4620-49C7-AF17-502C6C3E5CCD}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_ProgramContactAssigment"
   DTS:PackageType="5"
-  DTS:VersionBuild="126"
-  DTS:VersionGUID="{BE26960B-5499-46E5-AC14-5256394C6EDE}">
+  DTS:VersionBuild="127"
+  DTS:VersionGUID="{5AAE1FA0-7251-49F8-8B12-6D263D3B7FD7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -8571,7 +8571,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}"
-          SQLTask:SqlStatementSource="truncate table  dwh.[sf_ProgramContactAssigment]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table  dwh.[sf_ProgramContactAssigment__c]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -8648,17 +8648,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="256,42"
-          Id="Package\from Salesforce to SQL\sf_ProgramContactAssigment__c"
-          TopLeft="473,337" />
+          Size="223,42"
+          Id="Package\from Salesforce to SQL\ProgramContactAssigment"
+          TopLeft="270.16666848792,184.416666503085" />
         <NodeLayout
           Size="176,42"
           Id="Package\from Salesforce to SQL\Data Conversion"
           TopLeft="630.62498000761,203.666668285264" />
         <NodeLayout
-          Size="223,42"
-          Id="Package\from Salesforce to SQL\ProgramContactAssigment"
-          TopLeft="270.16666848792,184.416666503085" />
+          Size="256,42"
+          Id="Package\from Salesforce to SQL\sf_ProgramContactAssigment__c"
+          TopLeft="473,337" />
         <EdgeLayout
           Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
           TopLeft="493.16666848792,205.416666503085">
