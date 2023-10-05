@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:DelayValidation="True"
   DTS:ObjectName="ETLDB"
   DTS:DTSID="{89AAB1C9-7165-4A87-A8BC-F3240B091D24}"
   DTS:CreationName="OLEDB">

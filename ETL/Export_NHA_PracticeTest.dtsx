@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{182C68FD-7FA1-41C6-8D6C-5CF564B03873}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Export_NHA_PracticeTest"
   DTS:PackageType="5"
-  DTS:VersionBuild="138"
-  DTS:VersionGUID="{CD02A920-F000-443E-8EF3-E73BFC0ABFE3}">
+  DTS:VersionBuild="147"
+  DTS:VersionGUID="{CE52DE8E-9DA9-41B3-ACA4-45B1C28EB9FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -522,24 +522,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Salesforce Connection Manager]"
-      DTS:CreationName="Salesforce (KingswaySoft)"
-      DTS:DTSID="{23925DA4-DF97-4FEA-9DF5-EF3E9834E1A6}"
-      DTS:ObjectName="Salesforce Connection Manager">
-      <DTS:ObjectData>
-        <SalesforceConnectionManager
-          ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;RedirectUri=;UserName=ccarrillo-contractor@medcerts.com;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
-          ConnectByProxy="False">
-          <Password
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD+cSMYiA1DsiVa18ZHKQigAAAAAASAAACgAAAAEAAAAEFIzXxeu/o/Qd/aU7TrlIAgAAAAKGXCGZS3Ho1VmJ4jcRqnBj6m6dx+SC+gc7shQ36yRF8UAAAAbH3swejAU7QRcUtyjuZqlwRg01k</Password>
-          <SecurityToken
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGQb8cGrGPkqbcR1N88wLIAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB5ShIpQmNwKDboVRa8/oOUAAAAAASAAACgAAAAEAAAAC1gMSSq35rgjH/HCfA5HDY4AAAAbUizMC4FZiyPSjM4aYIFE7nMXw3cgpnkTFsrbjXlHWvixOGhSemZOq7WlDK23T5YBpwbDVc3mmkUAAAAOwhw823zWBnHg5rQ74zRJ1935qg</SecurityToken>
-        </SalesforceConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -616,6 +598,7 @@
         <DTS:Executable
           DTS:refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce"
           DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{8E07C0CD-0C77-4516-9E29-523500FC9463}"
           DTS:ExecutableType="Microsoft.Pipeline"
@@ -634,6 +617,7 @@
                   description="Populate data into Salesforce."
                   name="Salesforce Destination"
                   usesDispositions="true"
+                  validateExternalMetadata="False"
                   version="2">
                   <properties>
                     <property
@@ -651,7 +635,7 @@
                       dataType="System.Int32"
                       description="Batch size"
                       expressionType="Notify"
-                      name="BatchSize">50</property>
+                      name="BatchSize">200</property>
                     <property
                       dataType="System.String"
                       description="Specify the External ID field to be used for Salesforce upsert action."
@@ -706,8 +690,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Connections[Salesforce]"
-                      connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                      connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                       description="Salesforce Connection"
                       name="Salesforce" />
                   </connections>
@@ -742,12 +726,12 @@
                           externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Prog_Con_Assignment__c]"
                           lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramAssigment_ID]" />
                         <inputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[Id]"
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[id]"
                           cachedDataType="wstr"
                           cachedLength="18"
-                          cachedName="Id"
+                          cachedName="id"
                           externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Id]"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Id]" />
+                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]" />
                         <inputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[Acct_created_Date]"
                           cachedCodepage="1252"
@@ -765,12 +749,12 @@
                           externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Approval_Date__c]"
                           lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Approval_date]" />
                         <inputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[program_id_number__c]"
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ProgramCertificationId]"
                           cachedDataType="wstr"
-                          cachedLength="1300"
-                          cachedName="program_id_number__c"
-                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[CourseNumber__c]"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[program_id_number__c]" />
+                          cachedLength="18"
+                          cachedName="ProgramCertificationId"
+                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[ProgramCertification__c]"
+                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -986,6 +970,27 @@
                               name="LookupTypes" />
                           </properties>
                         </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[ProgramCertification__c]"
+                          dataType="wstr"
+                          length="18"
+                          name="ProgramCertification__c">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="FieldType">reference</property>
+                            <property
+                              dataType="System.String"
+                              isArray="true"
+                              name="LookupTypes">
+                              <arrayElements
+                                arrayElementCount="1">
+                                <arrayElement
+                                  dataType="System.String">ProgramCertification__c</arrayElement>
+                              </arrayElements>
+                            </property>
+                          </properties>
+                        </externalMetadataColumn>
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1047,12 +1052,13 @@
                   description="OLE DB Source"
                   name="SQL"
                   usesDispositions="true"
+                  validateExternalMetadata="False"
                   version="7">
                   <properties>
                     <property
                       dataType="System.Int32"
                       description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
+                      name="CommandTimeout">30</property>
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
@@ -1065,7 +1071,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dwh].[v_NHA_ExamPrepCourseAssignment]</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -1082,7 +1088,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -1102,15 +1108,6 @@
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Score]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Score]"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Score]"
-                          name="Score"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Case_Safe_ID_contacts__c]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -1121,38 +1118,6 @@
                           name="Case_Safe_ID_contacts__c"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[enlighten__Program__c]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[enlighten__Program__c]"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[enlighten__Program__c]"
-                          name="enlighten__Program__c"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[AttemptUserID]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[AttemptUserID]"
-                          length="50"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[AttemptUserID]"
-                          name="AttemptUserID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[PracticeDate]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[PracticeDate]"
-                          length="50"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[PracticeDate]"
-                          name="PracticeDate"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramAssigment_ID]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -1161,16 +1126,6 @@
                           length="18"
                           lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramAssigment_ID]"
                           name="ProgramAssigment_ID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[program_id_number__c]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[program_id_number__c]"
-                          length="1300"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[program_id_number__c]"
-                          name="program_id_number__c"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Approval_date]"
@@ -1195,16 +1150,6 @@
                           name="Cert_PRoduct"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Id]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Id]"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Id]"
-                          name="Id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Data_Current_As_OF]"
                           codePage="1252"
                           dataType="str"
@@ -1226,45 +1171,39 @@
                           lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Acct_created_Date]"
                           name="Acct_created_Date"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          length="18"
+                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramCertificationId]"
+                          length="18"
+                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]"
+                          name="ProgramCertificationId"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Score]"
-                          dataType="r8"
-                          name="Score" />
                         <externalMetadataColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Case_Safe_ID_contacts__c]"
                           dataType="wstr"
                           length="1300"
                           name="Case_Safe_ID_contacts__c" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[enlighten__Program__c]"
-                          dataType="wstr"
-                          length="18"
-                          name="enlighten__Program__c" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[AttemptUserID]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="AttemptUserID" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[PracticeDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="PracticeDate" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramAssigment_ID]"
                           dataType="wstr"
                           length="18"
                           name="ProgramAssigment_ID" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[program_id_number__c]"
-                          dataType="wstr"
-                          length="1300"
-                          name="program_id_number__c" />
                         <externalMetadataColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Approval_date]"
                           codePage="1252"
@@ -1278,11 +1217,6 @@
                           length="50"
                           name="Cert_PRoduct" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Id]"
-                          dataType="wstr"
-                          length="18"
-                          name="Id" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Data_Current_As_OF]"
                           codePage="1252"
                           dataType="str"
@@ -1294,6 +1228,16 @@
                           dataType="str"
                           length="50"
                           name="Acct_created_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="wstr"
+                          length="18"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramCertificationId]"
+                          dataType="wstr"
+                          length="18"
+                          name="ProgramCertificationId" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1308,43 +1252,17 @@
                           lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Case_Safe_ID_contacts__c]"
                           name="Case_Safe_ID_contacts__c" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[enlighten__Program__c]"
-                          dataType="wstr"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[enlighten__Program__c]"
-                          name="enlighten__Program__c" />
-                        <outputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramAssigment_ID]"
                           dataType="wstr"
                           length="18"
                           lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramAssigment_ID]"
                           name="ProgramAssigment_ID" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[program_id_number__c]"
-                          dataType="wstr"
-                          length="1300"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[program_id_number__c]"
-                          name="program_id_number__c" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[AttemptUserID]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[AttemptUserID]"
-                          name="AttemptUserID" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[id]"
                           dataType="wstr"
                           length="18"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Id]"
-                          name="Id" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[PracticeDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[PracticeDate]"
-                          name="PracticeDate" />
+                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
                         <outputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Approval_date]"
                           codePage="1252"
@@ -1374,10 +1292,11 @@
                           lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Cert_PRoduct]"
                           name="Cert_PRoduct" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Score]"
-                          dataType="r8"
-                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Score]"
-                          name="Score" />
+                          refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramCertificationId]"
+                          dataType="wstr"
+                          length="18"
+                          lineageId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramCertificationId]"
+                          name="ProgramCertificationId" />
                         <outputColumn
                           refId="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -3181,6 +3100,7 @@
         <DTS:Executable
           DTS:refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce"
           DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{4b1e292a-50a7-405f-865e-0b94da72e1ba}"
           DTS:ExecutableType="Microsoft.Pipeline"
@@ -3199,6 +3119,7 @@
                   description="Populate data into Salesforce."
                   name="Salesforce Destination"
                   usesDispositions="true"
+                  validateExternalMetadata="False"
                   version="2">
                   <properties>
                     <property
@@ -3216,7 +3137,7 @@
                       dataType="System.Int32"
                       description="Batch size"
                       expressionType="Notify"
-                      name="BatchSize">50</property>
+                      name="BatchSize">200</property>
                     <property
                       dataType="System.String"
                       description="Specify the External ID field to be used for Salesforce upsert action."
@@ -3271,8 +3192,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Connections[Salesforce]"
-                      connectionManagerID="Package.ConnectionManagers[Salesforce Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Salesforce Connection Manager]"
+                      connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                       description="Salesforce Connection"
                       name="Salesforce" />
                   </connections>
@@ -3399,6 +3320,41 @@
                               name="LookupTypes" />
                           </properties>
                         </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Attempt__c]"
+                          dataType="numeric"
+                          name="Attempt__c"
+                          precision="18">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="FieldType">double</property>
+                            <property
+                              dataType="System.Null"
+                              name="LookupTypes" />
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[ProgramCertification__c]"
+                          dataType="wstr"
+                          length="18"
+                          name="ProgramCertification__c">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="FieldType">reference</property>
+                            <property
+                              dataType="System.String"
+                              isArray="true"
+                              name="LookupTypes">
+                              <arrayElements
+                                arrayElementCount="1">
+                                <arrayElement
+                                  dataType="System.String">ProgramCertification__c</arrayElement>
+                              </arrayElements>
+                            </property>
+                          </properties>
+                        </externalMetadataColumn>
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3460,6 +3416,7 @@
                   description="OLE DB Source"
                   name="SQL"
                   usesDispositions="true"
+                  validateExternalMetadata="False"
                   version="7">
                   <properties>
                     <property
@@ -3886,13 +3843,17 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164,42"
-          Id="Package\Foreach Practice Test\from FILE to SQL"
-          TopLeft="189.999994859099,159.842109062335" />
+          Size="223,42"
+          Id="Package\Foreach Practice Test\ExamPrepCourseAssignment"
+          TopLeft="61,413" />
         <NodeLayout
           Size="340,42"
           Id="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce"
           TopLeft="50,335" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Foreach Practice Test\from FILE to SQL"
+          TopLeft="189.999994859099,159.842109062335" />
         <NodeLayout
           Size="163,42"
           Id="Package\Foreach Practice Test\Move Files with Error"
@@ -3901,6 +3862,10 @@
           Size="172,42"
           Id="Package\Foreach Practice Test\Move Loaded Files"
           TopLeft="486,339" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\Foreach Practice Test\Practice Test from SQL to Salesforce"
+          TopLeft="337,419" />
         <NodeLayout
           Size="382,42"
           Id="Package\Foreach Practice Test\SQL - sp_NHA_Certification_Exam_Merge"
@@ -4081,14 +4046,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="260,42"
-          Id="Package\Foreach Practice Test\Practice Test from SQL to Salesforce"
-          TopLeft="337,419" />
-        <NodeLayout
-          Size="223,42"
-          Id="Package\Foreach Practice Test\ExamPrepCourseAssignment"
-          TopLeft="61,413" />
         <EdgeLayout
           Id="Package\Foreach Practice Test.PrecedenceConstraints[Constraint 5]"
           TopLeft="220,377">
@@ -4156,69 +4113,6 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Foreach Practice Test\from FILE to SQL">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="318,42"
-          Id="Package\Foreach Practice Test\from FILE to SQL\FlatFile_NHA_Certification_Exam"
-          TopLeft="178.124997345731,99.8947387223759" />
-        <NodeLayout
-          Size="218,42"
-          Id="Package\Foreach Practice Test\from FILE to SQL\etl_NHA_Certification_Exam"
-          TopLeft="360.624994626269,234.00000440447" />
-        <EdgeLayout
-          Id="Package\Foreach Practice Test\from FILE to SQL.Paths[Flat File Source Output]"
-          TopLeft="337.124997345731,141.894738722376">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="132.499997280538,92.1052656820941"
-              Start="0,0"
-              End="132.499997280538,84.6052656820941">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.052632841047" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42.052632841047"
-                    Point2="0,46.052632841047"
-                    Point3="4,46.052632841047" />
-                  <mssgle:LineSegment
-                    End="128.499997280538,46.052632841047" />
-                  <mssgle:CubicBezierSegment
-                    Point1="128.499997280538,46.052632841047"
-                    Point2="132.499997280538,46.052632841047"
-                    Point3="132.499997280538,50.052632841047" />
-                  <mssgle:LineSegment
-                    End="132.499997280538,84.6052656820941" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Practice Test\from FILE to SQL\etl_NHA_Certification_Exam">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Foreach Practice Test\ExamPrepCourseAssignment from SQL to Salesforce">
     <LayoutInfo>
       <GraphLayout
@@ -4278,6 +4172,69 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Practice Test\from FILE to SQL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="318,42"
+          Id="Package\Foreach Practice Test\from FILE to SQL\FlatFile_NHA_Certification_Exam"
+          TopLeft="178.124997345731,99.8947387223759" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Foreach Practice Test\from FILE to SQL\etl_NHA_Certification_Exam"
+          TopLeft="360.624994626269,234.00000440447" />
+        <EdgeLayout
+          Id="Package\Foreach Practice Test\from FILE to SQL.Paths[Flat File Source Output]"
+          TopLeft="337.124997345731,141.894738722376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132.499997280538,92.1052656820941"
+              Start="0,0"
+              End="132.499997280538,84.6052656820941">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.052632841047" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.052632841047"
+                    Point2="0,46.052632841047"
+                    Point3="4,46.052632841047" />
+                  <mssgle:LineSegment
+                    End="128.499997280538,46.052632841047" />
+                  <mssgle:CubicBezierSegment
+                    Point1="128.499997280538,46.052632841047"
+                    Point2="132.499997280538,46.052632841047"
+                    Point3="132.499997280538,50.052632841047" />
+                  <mssgle:LineSegment
+                    End="132.499997280538,84.6052656820941" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Practice Test\from FILE to SQL\etl_NHA_Certification_Exam">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
