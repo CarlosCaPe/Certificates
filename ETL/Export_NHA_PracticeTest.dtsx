@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Export_NHA_PracticeTest"
   DTS:PackageType="5"
-  DTS:VersionBuild="147"
-  DTS:VersionGUID="{CE52DE8E-9DA9-41B3-ACA4-45B1C28EB9FB}">
+  DTS:VersionBuild="150"
+  DTS:VersionGUID="{EE5DBFB2-2E9D-4FB0-803C-411D98E2A196}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3220,19 +3220,26 @@
                           externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Score__c]"
                           lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Score]" />
                         <inputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ExamPrepCourseAssignment_ID]"
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[id]"
                           cachedDataType="wstr"
                           cachedLength="18"
-                          cachedName="ExamPrepCourseAssignment_ID"
-                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[ExamPrepCourseAssignment__c]"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ExamPrepCourseAssignment_ID]" />
-                        <inputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ID]"
-                          cachedDataType="wstr"
-                          cachedLength="18"
-                          cachedName="ID"
+                          cachedName="id"
                           externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[Id]"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ID]" />
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ProgramCertificationId]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="ProgramCertificationId"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[ProgramCertification__c]"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]" />
+                        <inputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].Columns[ProgramAssigment_ID]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="ProgramAssigment_ID"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\Salesforce Destination.Inputs[Input].ExternalColumns[ExamPrepCourseAssignment__c]"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramAssigment_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3435,7 +3442,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dwh].[v_NHA_Practice_Test]</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3452,7 +3459,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -3491,16 +3498,6 @@
                           name="Case_Safe_ID_contacts__c"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[enlighten__Program__c]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[enlighten__Program__c]"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[enlighten__Program__c]"
-                          name="enlighten__Program__c"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[PracticeDate]"
                           codePage="1252"
                           dataType="str"
@@ -3522,47 +3519,6 @@
                           name="ProgramAssigment_ID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[program_id_number__c]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[program_id_number__c]"
-                          length="1300"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[program_id_number__c]"
-                          name="program_id_number__c"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Cert_Product]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Cert_Product]"
-                          length="50"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Cert_Product]"
-                          name="Cert_Product"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ExamPrepCourseAssignment_ID]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ExamPrepCourseAssignment_ID]"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ExamPrepCourseAssignment_ID]"
-                          name="ExamPrepCourseAssignment_ID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ID]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ID]"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ID]"
-                          name="ID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[rn]"
                           dataType="i8"
                           errorOrTruncationOperation="Conversion"
@@ -3570,6 +3526,81 @@
                           externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[rn]"
                           lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[rn]"
                           name="rn"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          length="18"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Approval_date]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Approval_date]"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Approval_date]"
+                          name="Approval_date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Data_Current_As_OF]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Data_Current_As_OF]"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Data_Current_As_OF]"
+                          name="Data_Current_As_OF"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Acct_created_Date]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Acct_created_Date]"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Acct_created_Date]"
+                          name="Acct_created_Date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Cert_PRoduct]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Cert_PRoduct]"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Cert_PRoduct]"
+                          name="Cert_PRoduct"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Student_Email]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Student_Email]"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[Student_Email]"
+                          name="Student_Email"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramCertificationId]"
+                          length="18"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].Columns[ProgramCertificationId]"
+                          name="ProgramCertificationId"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -3584,11 +3615,6 @@
                           length="1300"
                           name="Case_Safe_ID_contacts__c" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[enlighten__Program__c]"
-                          dataType="wstr"
-                          length="18"
-                          name="enlighten__Program__c" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[PracticeDate]"
                           codePage="1252"
                           dataType="str"
@@ -3600,30 +3626,49 @@
                           length="18"
                           name="ProgramAssigment_ID" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[program_id_number__c]"
-                          dataType="wstr"
-                          length="1300"
-                          name="program_id_number__c" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Cert_Product]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="Cert_Product" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ExamPrepCourseAssignment_ID]"
-                          dataType="wstr"
-                          length="18"
-                          name="ExamPrepCourseAssignment_ID" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ID]"
-                          dataType="wstr"
-                          length="18"
-                          name="ID" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[rn]"
                           dataType="i8"
                           name="rn" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="wstr"
+                          length="18"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Approval_date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Approval_date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Data_Current_As_OF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Data_Current_As_OF" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Acct_created_Date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Acct_created_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Cert_PRoduct]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Cert_PRoduct" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[Student_Email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Student_Email" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Output].ExternalColumns[ProgramCertificationId]"
+                          dataType="wstr"
+                          length="18"
+                          name="ProgramCertificationId" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3638,42 +3683,45 @@
                           lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Case_Safe_ID_contacts__c]"
                           name="Case_Safe_ID_contacts__c" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[enlighten__Program__c]"
-                          dataType="wstr"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[enlighten__Program__c]"
-                          name="enlighten__Program__c" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Cert_Product]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Cert_Product]"
-                          name="Cert_Product" />
-                        <outputColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramAssigment_ID]"
                           dataType="wstr"
                           length="18"
                           lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramAssigment_ID]"
                           name="ProgramAssigment_ID" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[program_id_number__c]"
-                          dataType="wstr"
-                          length="1300"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[program_id_number__c]"
-                          name="program_id_number__c" />
-                        <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ExamPrepCourseAssignment_ID]"
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[id]"
                           dataType="wstr"
                           length="18"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ExamPrepCourseAssignment_ID]"
-                          name="ExamPrepCourseAssignment_ID" />
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
                         <outputColumn
-                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ID]"
-                          dataType="wstr"
-                          length="18"
-                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ID]"
-                          name="ID" />
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Approval_date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Approval_date]"
+                          name="Approval_date" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Data_Current_As_OF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Data_Current_As_OF]"
+                          name="Data_Current_As_OF" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Acct_created_Date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Acct_created_Date]"
+                          name="Acct_created_Date" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Cert_PRoduct]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Cert_PRoduct]"
+                          name="Cert_PRoduct" />
                         <outputColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[PracticeDate]"
                           codePage="1252"
@@ -3682,10 +3730,23 @@
                           lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[PracticeDate]"
                           name="PracticeDate" />
                         <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Student_Email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Student_Email]"
+                          name="Student_Email" />
+                        <outputColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Score]"
                           dataType="r8"
                           lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[Score]"
                           name="Score" />
+                        <outputColumn
+                          refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramCertificationId]"
+                          dataType="wstr"
+                          length="18"
+                          lineageId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[ProgramCertificationId]"
+                          name="ProgramCertificationId" />
                         <outputColumn
                           refId="Package\Foreach Practice Test\Practice Test from SQL to Salesforce\SQL.Outputs[OLE DB Source Error Output].Columns[rn]"
                           dataType="i8"

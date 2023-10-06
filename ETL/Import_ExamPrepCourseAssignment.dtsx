@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_ExamPrepCourseAssignment"
   DTS:PackageType="5"
-  DTS:VersionBuild="112"
-  DTS:VersionGUID="{C1268E8D-E6B8-46AE-82AF-AA052BEF9D63}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{40A750C0-BA91-4CA7-8E9C-0A3895BD1625}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -470,8 +470,8 @@
               <connections>
                 <connection
                   refId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Destination.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
+                  connectionManagerRefId="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -626,8 +626,8 @@
               <connections>
                 <connection
                   refId="Package\delete from ExamPrepCourseAssignment__c\Salesforce Source.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
+                  connectionManagerRefId="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -1154,7 +1154,7 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\ExamPrepCourseAssignment.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
@@ -2015,13 +2015,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="256,42"
-          Id="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c"
-          TopLeft="473,337" />
-        <NodeLayout
           Size="223,42"
           Id="Package\from Salesforce to SQL\ExamPrepCourseAssignment"
           TopLeft="270.16666848792,184.416666503085" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\from Salesforce to SQL\sf_ExamPrepCourseAssignment__c"
+          TopLeft="473,337" />
         <NodeLayout
           Size="176,42"
           Id="Package\from Salesforce to SQL\Data Conversion"
