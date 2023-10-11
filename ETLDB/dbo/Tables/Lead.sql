@@ -20,6 +20,11 @@
     [Duration]                NUMERIC (18, 2) NULL,
     [EnrollmentStartDate]     DATE            NULL,
     [BirthDate]               DATE            NULL,
-    [ProgramName]             NVARCHAR (255)  NULL
+    [ProgramName]             NVARCHAR (255)  NULL,
+    [Channel]                 NVARCHAR (255)  NULL,
+    [Supported]               BIT             NULL,
+    [RecordTypeID]            VARCHAR (255)   NULL
 );
+
+
 

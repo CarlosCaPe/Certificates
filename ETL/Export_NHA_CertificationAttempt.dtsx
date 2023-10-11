@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Export_NHA_CertificationAttempt"
   DTS:PackageType="5"
-  DTS:VersionBuild="118"
-  DTS:VersionGUID="{D189D5FA-A4A3-48B8-91BF-7953D2E96DD5}">
+  DTS:VersionBuild="119"
+  DTS:VersionGUID="{9A6446CD-6A7C-4377-9F0F-32EA65207679}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3118,40 +3118,6 @@
           Id="Package\Foreach Certification Exam\from SQL to Salesforce\Salesforce Destination"
           TopLeft="184,301" />
         <EdgeLayout
-          Id="Package\Foreach Certification Exam\from SQL to Salesforce.Paths[OLE DB Source Output]"
-          TopLeft="289.5,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="173,68"
-              Start="0,0"
-              End="173,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="169,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="169,34"
-                    Point2="173,34"
-                    Point3="173,38" />
-                  <mssgle:LineSegment
-                    End="173,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Foreach Certification Exam\from SQL to Salesforce.Paths[Data Conversion Output]"
           TopLeft="462.5,238">
           <EdgeLayout.Curve>
@@ -3177,6 +3143,40 @@
                     Point3="-184,35.5" />
                   <mssgle:LineSegment
                     End="-184,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Certification Exam\from SQL to Salesforce.Paths[OLE DB Source Output]"
+          TopLeft="289.5,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173,68"
+              Start="0,0"
+              End="173,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="169,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="169,34"
+                    Point2="173,34"
+                    Point3="173,38" />
+                  <mssgle:LineSegment
+                    End="173,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

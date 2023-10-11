@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{59088C15-0D39-47BD-B088-70BF77A7A7E3}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_ProgramCertification"
   DTS:PackageType="5"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{7910ED66-D202-4242-BFF0-10338CDBAC8B}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{B49FBDF8-CFDE-4FE4-922E-E9D3CB92FBD1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -405,17 +405,17 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[SystemModstamp]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbTimeStampOffset"
                       cachedName="SystemModstamp"
                       lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[SystemModstamp]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[LastModifiedDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbTimeStampOffset"
                       cachedName="LastModifiedDate"
                       lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedDate]" />
                     <inputColumn
                       refId="Package\from Salesforce to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[CreatedDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbTimeStampOffset"
                       cachedName="CreatedDate"
                       lineageId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedDate]" />
                   </inputColumns>
@@ -579,7 +579,7 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\ProgramCertification.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
@@ -737,7 +737,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
@@ -889,7 +889,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
@@ -993,7 +993,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].Columns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
@@ -1086,7 +1086,7 @@
                       name="CreatedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="CreatedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Employer_Relations_Coordinator__c]"
@@ -1158,7 +1158,7 @@
                       name="LastModifiedById" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[Name]"
@@ -1207,7 +1207,7 @@
                       name="StudentClinicalSiteInfoFormSubmit__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
+                      dataType="dbTimeStampOffset"
                       name="SystemModstamp" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\ProgramCertification.Outputs[Salesforce Source Output].ExternalColumns[VA_Externship_Status__c]"

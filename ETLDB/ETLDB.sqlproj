@@ -108,12 +108,18 @@
     <Build Include="etl\Tables\MedCertsPracticeExamsFullHistory.sql" />
     <Build Include="dwh\Tables\sf_ProgramCourseAssosiation__c.sql" />
     <Build Include="dwh\Tables\sf_ProgramContactAssigment__c.sql" />
-    <Build Include="dwh\Tables\sf_ProgramContactAssigment.sql" />
     <Build Include="dwh\Tables\sf_Course.sql" />
     <Build Include="dwh\Tables\ProgramCodeToCert.sql" />
     <Build Include="dbo\Tables\sf_ProgramAssigment.sql" />
     <Build Include="dbo\Tables\MedCerts Practice Exams Full History.sql" />
     <Build Include="etl\Views\v_ETL_No_Exceptions.sql" />
     <Build Include="etl\Views\v_ETL_Exceptions.sql" />
+    <Build Include="dwh\Tables\sf_ProgramPRD.sql" />
+    <Build Include="dwh\Tables\sf_ProgramCertification.sql" />
+    <Build Include="dwh\Tables\sf_ProgramAssigmentPRD.sql" />
+    <Build Include="dwh\Tables\sf_ContactPRD.sql" />
+    <Build Include="dwh\Tables\sf_Account.sql" />
+    <Build Include="dwh\Views\v_sf_WVU_Medicine_Progress_Report.sql" />
+    <Build Include="dwh\Views\v_sf_ProgramAssigment.sql" />
   </ItemGroup>
 </Project>

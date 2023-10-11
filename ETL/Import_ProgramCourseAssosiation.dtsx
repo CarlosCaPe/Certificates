@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{BA7A08FB-0057-48B2-B181-96D17857FCE2}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_ProgramCourseAssosiation"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{985A5BE2-B6C6-43A2-888C-4934E89BC020}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{82A36B55-6A4A-4508-8B17-3FF59EB2E895}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -500,7 +500,7 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\ProgramCourseAssosiation.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
@@ -1038,10 +1038,6 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="223,42"
-          Id="Package\from Salesforce to SQL\ProgramCourseAssosiation"
-          TopLeft="270.16666848792,184.416666503085" />
-        <NodeLayout
           Size="256,42"
           Id="Package\from Salesforce to SQL\sf_ProgramCourseAssosiation__c"
           TopLeft="473,337" />
@@ -1049,6 +1045,10 @@
           Size="176,42"
           Id="Package\from Salesforce to SQL\Data Conversion"
           TopLeft="630.62498000761,203.666668285264" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\from Salesforce to SQL\ProgramCourseAssosiation"
+          TopLeft="270.16666848792,184.416666503085" />
         <EdgeLayout
           Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
           TopLeft="493.16666848792,205.416666503085">

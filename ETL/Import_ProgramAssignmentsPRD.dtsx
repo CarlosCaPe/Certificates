@@ -6,14 +6,14 @@
   DTS:CreatorComputerName="MED-VDIPWV08"
   DTS:CreatorName="MED\ccarrillo"
   DTS:DelayValidation="True"
-  DTS:DTSID="{F9F5AAFC-6CF6-47CE-84FD-ADD63FEB71F4}"
+  DTS:DTSID="{80FC0674-AC25-48D3-8D25-D59A767E97EF}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Import_ProgramAssignments"
+  DTS:ObjectName="Import_ProgramAssignmentsPRD"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{B03F212A-7953-4D7F-90AC-6D9153DB8461}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{F9C46307-CBAE-400B-95FE-A47CB860744A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,7 +21,7 @@
       DTS:refId="Package.ConnectionManagers[FlatFile_NHA_Certification_Exam]"
       DTS:CreationName="FLATFILE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{EEA97DD6-458F-46BC-8A6F-E78324FE7326}"
+      DTS:DTSID="{6B12A789-D437-4DDC-986B-7FDF523F2E9B}"
       DTS:ObjectName="FlatFile_NHA_Certification_Exam">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::Path_NHACertificationExam] + "\\" + @[User::FileName]</DTS:PropertyExpression>
@@ -43,7 +43,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="First Name"
-              DTS:DTSID="{06C83C63-3EC0-40F3-AC6A-FAE1BFD1CD55}"
+              DTS:DTSID="{D34364B7-F13D-45B6-B3E1-62670B533253}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -52,7 +52,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Last Name"
-              DTS:DTSID="{4CEDE26F-476E-4339-9D4C-34C86C4F4BE6}"
+              DTS:DTSID="{9C77DEBB-E21C-495D-ADAC-7E91E6C042D3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -61,7 +61,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Student Email"
-              DTS:DTSID="{F383939D-08AA-4E40-BF69-1862A12D5688}"
+              DTS:DTSID="{AADDCA48-E86B-4A7A-BE49-0779C23ECFC7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -70,7 +70,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Institution"
-              DTS:DTSID="{CB459A94-42CE-4BC6-8995-A087784D8F52}"
+              DTS:DTSID="{7E181EB8-BE83-4F0B-AC36-992E2FFCD740}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cert Product"
-              DTS:DTSID="{CF29467D-C733-45BA-A4B1-0CA42650034C}"
+              DTS:DTSID="{48DF3BE8-FF03-489B-A0EC-058BE9454B40}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,7 +88,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductNumber"
-              DTS:DTSID="{25C3A259-2780-4A3B-95E3-C3BF9407BCC1}"
+              DTS:DTSID="{0DD940C3-7E67-4C5E-9B74-57121B47E7E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -97,7 +97,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NHA Exam Registration Date"
-              DTS:DTSID="{8B02626F-4E37-42AC-8187-9FE70E876419}"
+              DTS:DTSID="{8EE6D514-3FB4-48C2-9A3F-86BF98AA4280}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -106,7 +106,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Exam Order Taken"
-              DTS:DTSID="{DF5E9AE7-1B48-4E4B-9C92-FBC50662336D}"
+              DTS:DTSID="{48C6B1F7-5E21-466E-B026-63AAA5E0E2CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -115,7 +115,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Mode of Testing"
-              DTS:DTSID="{D1C70A7F-2E2E-4814-8CFD-54BC49C13AEE}"
+              DTS:DTSID="{14DAA461-1B5E-40AA-A9C6-B7A99B970B49}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -124,7 +124,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Approval Date"
-              DTS:DTSID="{7FC7C21D-D44A-4BB7-8D02-FE222C52F7C5}"
+              DTS:DTSID="{D8D8F150-9373-48C7-A904-7CAF2987CF95}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -133,7 +133,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Planned Exam Date"
-              DTS:DTSID="{36682A87-C41D-42BE-9112-B8EE1B3FC81C}"
+              DTS:DTSID="{F30E770A-6AA5-438C-8E9D-2569BBC78D24}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -142,7 +142,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Actual Exam Date"
-              DTS:DTSID="{85116E68-EA45-4A81-88EA-5F264F9E71A2}"
+              DTS:DTSID="{0F7AA182-6EAC-4F4C-A371-7386799FAA2B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -151,7 +151,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Score"
-              DTS:DTSID="{493FB197-8A66-42CF-9101-CE630181D5CE}"
+              DTS:DTSID="{58E58FFD-BA8A-4802-913F-53A16294D6C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -160,7 +160,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Exam Result"
-              DTS:DTSID="{1843D528-6B2E-43BC-974F-E9A1B4413E1A}"
+              DTS:DTSID="{90D55E84-BDAC-4FC6-96CB-90DA3C05D137}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -169,7 +169,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cetification # Awarded"
-              DTS:DTSID="{B70ABC0C-DC67-4B56-AF73-46DA49D456B5}"
+              DTS:DTSID="{ECC0343B-5074-4D90-BF13-E47703718CB6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -178,7 +178,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Data Current As Of"
-              DTS:DTSID="{74A497BE-219E-4353-8E09-27AF98AD8B4C}"
+              DTS:DTSID="{3B37B20B-9D31-4615-85C9-444A82888EAE}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -188,7 +188,7 @@
       DTS:refId="Package.ConnectionManagers[FlatFile_NHA_Certification_Exam_Loaded]"
       DTS:CreationName="FLATFILE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{F95C990C-8A57-4DE6-8ABB-98EB1AFDC301}"
+      DTS:DTSID="{80066ECF-5050-4830-9FA5-E8F99BC0A487}"
       DTS:ObjectName="FlatFile_NHA_Certification_Exam_Loaded">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::Path_NHACertificationExam_LoadFiles] + "\\" +  @[User::FileName]</DTS:PropertyExpression>
@@ -210,7 +210,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="First Name"
-              DTS:DTSID="{06C83C63-3EC0-40F3-AC6A-FAE1BFD1CD55}"
+              DTS:DTSID="{D34364B7-F13D-45B6-B3E1-62670B533253}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -219,7 +219,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Last Name"
-              DTS:DTSID="{4CEDE26F-476E-4339-9D4C-34C86C4F4BE6}"
+              DTS:DTSID="{9C77DEBB-E21C-495D-ADAC-7E91E6C042D3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -228,7 +228,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Student Email"
-              DTS:DTSID="{F383939D-08AA-4E40-BF69-1862A12D5688}"
+              DTS:DTSID="{AADDCA48-E86B-4A7A-BE49-0779C23ECFC7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -237,7 +237,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Institution"
-              DTS:DTSID="{CB459A94-42CE-4BC6-8995-A087784D8F52}"
+              DTS:DTSID="{7E181EB8-BE83-4F0B-AC36-992E2FFCD740}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -246,7 +246,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cert Product"
-              DTS:DTSID="{CF29467D-C733-45BA-A4B1-0CA42650034C}"
+              DTS:DTSID="{48DF3BE8-FF03-489B-A0EC-058BE9454B40}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -255,7 +255,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductNumber"
-              DTS:DTSID="{25C3A259-2780-4A3B-95E3-C3BF9407BCC1}"
+              DTS:DTSID="{0DD940C3-7E67-4C5E-9B74-57121B47E7E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +264,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NHA Exam Registration Date"
-              DTS:DTSID="{8B02626F-4E37-42AC-8187-9FE70E876419}"
+              DTS:DTSID="{8EE6D514-3FB4-48C2-9A3F-86BF98AA4280}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -273,7 +273,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Exam Order Taken"
-              DTS:DTSID="{DF5E9AE7-1B48-4E4B-9C92-FBC50662336D}"
+              DTS:DTSID="{48C6B1F7-5E21-466E-B026-63AAA5E0E2CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -282,7 +282,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Mode of Testing"
-              DTS:DTSID="{D1C70A7F-2E2E-4814-8CFD-54BC49C13AEE}"
+              DTS:DTSID="{14DAA461-1B5E-40AA-A9C6-B7A99B970B49}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -291,7 +291,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Approval Date"
-              DTS:DTSID="{7FC7C21D-D44A-4BB7-8D02-FE222C52F7C5}"
+              DTS:DTSID="{D8D8F150-9373-48C7-A904-7CAF2987CF95}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -300,7 +300,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Planned Exam Date"
-              DTS:DTSID="{36682A87-C41D-42BE-9112-B8EE1B3FC81C}"
+              DTS:DTSID="{F30E770A-6AA5-438C-8E9D-2569BBC78D24}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -309,7 +309,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Actual Exam Date"
-              DTS:DTSID="{85116E68-EA45-4A81-88EA-5F264F9E71A2}"
+              DTS:DTSID="{0F7AA182-6EAC-4F4C-A371-7386799FAA2B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -318,7 +318,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Score"
-              DTS:DTSID="{493FB197-8A66-42CF-9101-CE630181D5CE}"
+              DTS:DTSID="{58E58FFD-BA8A-4802-913F-53A16294D6C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -327,7 +327,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Exam Result"
-              DTS:DTSID="{1843D528-6B2E-43BC-974F-E9A1B4413E1A}"
+              DTS:DTSID="{90D55E84-BDAC-4FC6-96CB-90DA3C05D137}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -336,7 +336,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cetification # Awarded"
-              DTS:DTSID="{B70ABC0C-DC67-4B56-AF73-46DA49D456B5}"
+              DTS:DTSID="{ECC0343B-5074-4D90-BF13-E47703718CB6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -345,7 +345,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Data Current As Of"
-              DTS:DTSID="{74A497BE-219E-4353-8E09-27AF98AD8B4C}"
+              DTS:DTSID="{3B37B20B-9D31-4615-85C9-444A82888EAE}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -355,7 +355,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C10F28AC-33C4-403D-993E-87649D25F1F5}"
+      DTS:DTSID="{53C07ABA-7F5E-44DB-9E74-8BEE093A8EAA}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
@@ -365,7 +365,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2FBD127E-62D1-4849-B788-3C5ED30FD606}"
+      DTS:DTSID="{B6063C3D-1213-4DE5-8720-7334007F562C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::Path_NHACertificationExam_LoadFiles] + &quot;\\&quot;  + RIGHT( @[User::FileName], FINDSTRING( REVERSE( @[User::FileName] ), &quot;\\&quot;, 1 )   )"
       DTS:IncludeInDebugDump="2345"
@@ -381,7 +381,7 @@
       DTS:CreationName="Microsoft.Pipeline"
       DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{8B79DE56-079C-4A04-9A1C-B951ACF51B13}"
+      DTS:DTSID="{18FC4A73-0941-4395-811F-E754974D53F6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="from Salesforce to SQL"
@@ -7154,7 +7154,7 @@
       DTS:refId="Package\truncate sf_ProgramAssigment"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{644A9B7F-85AC-4679-B0BB-0B064DC09A99}"
+      DTS:DTSID="{0F2508B1-7D60-40CD-B88B-E18E6CFE16CF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate sf_ProgramAssigment"
@@ -7172,7 +7172,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{67C6D13B-969B-4BBD-B2E6-2554E3D3E184}"
+      DTS:DTSID="{B800A6E1-DCEF-4D86-9453-E17DB72ECF47}"
       DTS:From="Package\truncate sf_ProgramAssigment"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"

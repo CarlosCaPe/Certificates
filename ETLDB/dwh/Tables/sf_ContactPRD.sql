@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dwh].[sf_Contact] (
+﻿CREATE TABLE [dwh].[sf_ContactPRD] (
     [Academic_Email__c]               NVARCHAR (80)   NULL,
     [Academic_External_ID__c]         NVARCHAR (50)   NULL,
     [AccountId]                       NVARCHAR (18)   NULL,
@@ -26,8 +26,4 @@
     [End_Date__c]                     DATE            NULL,
     [Last_Activity_Completion__c]     DATE            NULL
 );
-
-
-
-
 
