@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{BD9BC2D1-D1BA-4036-9DC2-73C78D8640A4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_Contacts"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{092480E3-A8E9-4765-B02D-3C5DB6CE6715}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{B92D9BAB-BBC2-48D6-A495-0D2864D795A6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -454,7 +454,7 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\Contact.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
@@ -623,6 +623,322 @@
                       lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[NHA_registered_email__c]"
                       name="NHA_registered_email__c"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Academic_Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Academic_Status__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Academic_Status__c]"
+                      name="Academic_Status__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[FirstName]"
+                      length="40"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[LastName]"
+                      length="80"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Enrolled_Program__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Enrolled_Program__c]"
+                      length="100"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Enrolled_Program__c]"
+                      name="Enrolled_Program__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Start_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Start_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Start_Date__c]"
+                      name="Start_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Program_Completion_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Program_Completion_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Program_Completion_Date__c]"
+                      name="Program_Completion_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Cleared_for_National_Exam__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Cleared_for_National_Exam__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Cleared_for_National_Exam__c]"
+                      name="Cleared_for_National_Exam__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Certification_1_Final_Result__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Certification_1_Final_Result__c]"
+                      length="1300"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Certification_1_Final_Result__c]"
+                      name="Certification_1_Final_Result__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_LMS_Login_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_LMS_Login_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_LMS_Login_Date__c]"
+                      name="Last_LMS_Login_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastActivityDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[LastActivityDate]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastActivityDate]"
+                      name="LastActivityDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[App_Hispanic_Latino__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[App_Hispanic_Latino__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[App_Hispanic_Latino__c]"
+                      name="App_Hispanic_Latino__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[B2B_Partner__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[B2B_Partner__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[B2B_Partner__c]"
+                      name="B2B_Partner__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Certification_Goal__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Certification_Goal__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Certification_Goal__c]"
+                      name="Certification_Goal__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Cohort_ID__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Cohort_ID__c]"
+                      length="100"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Cohort_ID__c]"
+                      name="Cohort_ID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Cost_of_Course__c]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Cost_of_Course__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Cost_of_Course__c]"
+                      name="Cost_of_Course__c"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Company_ID__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Company_ID__c]"
+                      length="30"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Company_ID__c]"
+                      name="DOZISF__ZoomInfo_Company_ID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Enrich_Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Enrich_Status__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Enrich_Status__c]"
+                      name="DOZISF__ZoomInfo_Enrich_Status__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_First_Updated__c]"
+                      dataType="dbTimeStampOffset"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_First_Updated__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_First_Updated__c]"
+                      name="DOZISF__ZoomInfo_First_Updated__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Id__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Id__c]"
+                      length="30"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Id__c]"
+                      name="DOZISF__ZoomInfo_Id__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_InboxAI_ID__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_InboxAI_ID__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_InboxAI_ID__c]"
+                      name="DOZISF__ZoomInfo_InboxAI_ID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Last_Updated__c]"
+                      dataType="dbTimeStampOffset"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Last_Updated__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Last_Updated__c]"
+                      name="DOZISF__ZoomInfo_Last_Updated__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Non_Matched_Reason__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Non_Matched_Reason__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[DOZISF__ZoomInfo_Non_Matched_Reason__c]"
+                      name="DOZISF__ZoomInfo_Non_Matched_Reason__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Enrolled_Course_Name__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Enrolled_Course_Name__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Enrolled_Course_Name__c]"
+                      name="Enrolled_Course_Name__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Date_Clicked__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Date_Clicked__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Date_Clicked__c]"
+                      name="Last_Date_Clicked__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Date_Opened__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Date_Opened__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Date_Opened__c]"
+                      name="Last_Date_Opened__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Date_Sent__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Date_Sent__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Date_Sent__c]"
+                      name="Last_Date_Sent__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Send_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Send_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Send_Date__c]"
+                      name="Last_Send_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[MC_Phone__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[MC_Phone__c]"
+                      length="1300"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[MC_Phone__c]"
+                      name="MC_Phone__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[National_Certifications__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[National_Certifications__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[National_Certifications__c]"
+                      name="National_Certifications__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Primary_Industry__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Primary_Industry__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Primary_Industry__c]"
+                      name="Primary_Industry__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Sub_Industry__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Sub_Industry__c]"
+                      length="255"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Sub_Industry__c]"
+                      name="Sub_Industry__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[End_Date__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[End_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[End_Date__c]"
+                      name="End_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Activity_Completion__c]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Activity_Completion__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Activity_Completion__c]"
+                      name="Last_Activity_Completion__c"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -725,12 +1041,6 @@
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Amount_Left_to_be_Invoiced__c]"
                       dataType="numeric"
                       name="Amount_Left_to_be_Invoiced__c"
-                      precision="20"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Amount_Refunded__c]"
-                      dataType="numeric"
-                      name="Amount_Refunded__c"
                       precision="20"
                       scale="2" />
                     <externalMetadataColumn
@@ -869,10 +1179,6 @@
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Call_Recording_Disclosure__c]"
                       dataType="bool"
                       name="Call_Recording_Disclosure__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Career_Edge_Account_Activation_Date__c]"
-                      dataType="dbTimeStampOffset"
-                      name="Career_Edge_Account_Activation_Date__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Career_Service_Status__c]"
                       dataType="wstr"
@@ -1211,10 +1517,6 @@
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Certification_1_Pass_Date__c]"
                       dataType="dbDate"
                       name="Certification_1_Pass_Date__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Certification_1_Passed_Email_Sent_Date__c]"
-                      dataType="dbDate"
-                      name="Certification_1_Passed_Email_Sent_Date__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Certification_1_Registration_Date__c]"
                       dataType="dbDate"
@@ -1657,11 +1959,6 @@
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[CET_Clinical_Log_Received_Date__c]"
                       dataType="dbDate"
                       name="CET_Clinical_Log_Received_Date__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[CEU_Advisory_Group__c]"
-                      dataType="numeric"
-                      name="CEU_Advisory_Group__c"
-                      precision="18" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[CG_Adjustment_Amount__c]"
                       dataType="numeric"
@@ -2885,10 +3182,6 @@
                       dataType="bool"
                       name="Final_Address_Verified__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Final_Assessment_Fail__c]"
-                      dataType="bool"
-                      name="Final_Assessment_Fail__c" />
-                    <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Final_Assessment_Fail_Email_Date__c]"
                       dataType="dbDate"
                       name="Final_Assessment_Fail_Email_Date__c" />
@@ -2958,9 +3251,9 @@
                       name="Guardian_Last_Name__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Guardian_Mobile_Number__c]"
-                      dataType="numeric"
-                      name="Guardian_Mobile_Number__c"
-                      precision="18" />
+                      dataType="wstr"
+                      length="255"
+                      name="Guardian_Mobile_Number__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Guild_External_ID__c]"
                       dataType="wstr"
@@ -3014,40 +3307,6 @@
                       dataType="wstr"
                       length="18"
                       name="Id" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[ifspmaps__address_mailing__c]"
-                      dataType="wstr"
-                      length="1300"
-                      name="ifspmaps__address_mailing__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[ifspmaps__address_other__c]"
-                      dataType="wstr"
-                      length="1300"
-                      name="ifspmaps__address_other__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[ifspmaps__GEO_Mailing_Lat__c]"
-                      dataType="wstr"
-                      length="50"
-                      name="ifspmaps__GEO_Mailing_Lat__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[ifspmaps__GEO_Mailing_Lon__c]"
-                      dataType="wstr"
-                      length="50"
-                      name="ifspmaps__GEO_Mailing_Lon__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[ifspmaps__GEO_Other_Lat__c]"
-                      dataType="wstr"
-                      length="50"
-                      name="ifspmaps__GEO_Other_Lat__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[ifspmaps__GEO_Other_Lon__c]"
-                      dataType="wstr"
-                      length="50"
-                      name="ifspmaps__GEO_Other_Lon__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Import_Campaign__c]"
-                      dataType="bool"
-                      name="Import_Campaign__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[In_rotation__c]"
                       dataType="bool"
@@ -3191,11 +3450,6 @@
                       length="20"
                       name="JigsawContactId" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Job_Listing__c]"
-                      dataType="wstr"
-                      length="18"
-                      name="Job_Listing__c" />
-                    <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Job_Search_Prep_Opt_Out__c]"
                       dataType="bool"
                       name="Job_Search_Prep_Opt_Out__c" />
@@ -3203,11 +3457,6 @@
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Job_Search_Prep_Program_Assigned_2__c]"
                       dataType="bool"
                       name="Job_Search_Prep_Program_Assigned_2__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Job_Search_Prep_Program_Opt_Out_Reason__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Job_Search_Prep_Program_Opt_Out_Reason__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Job_Title__c]"
                       dataType="wstr"
@@ -3509,27 +3758,6 @@
                       length="12"
                       name="MyCAA_Number__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[n2de__Distribution_count__c]"
-                      dataType="numeric"
-                      name="n2de__Distribution_count__c"
-                      precision="18" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[n2de__Is_distributed__c]"
-                      dataType="bool"
-                      name="n2de__Is_distributed__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[n2de__Is_reassigned__c]"
-                      dataType="bool"
-                      name="n2de__Is_reassigned__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[n2de__Last_distributed__c]"
-                      dataType="dbTimeStampOffset"
-                      name="n2de__Last_distributed__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[n2de__Last_reassigned__c]"
-                      dataType="dbTimeStampOffset"
-                      name="n2de__Last_reassigned__c" />
-                    <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Name]"
                       dataType="wstr"
                       length="121"
@@ -3825,11 +4053,6 @@
                       dataType="wstr"
                       length="255"
                       name="Practice_Exam_Exceptions_3__c" />
-                    <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Practice_Exam_Exceptions_4__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Practice_Exam_Exceptions_4__c" />
                     <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Preferred_Method_of_Support__c]"
                       dataType="wstr"
@@ -4455,10 +4678,6 @@
                       length="255"
                       name="TA_CA_Funds_Used_this_FY__c" />
                     <externalMetadataColumn
-                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[tdc_tsw__SMS_Opt_out__c]"
-                      dataType="bool"
-                      name="tdc_tsw__SMS_Opt_out__c" />
-                    <externalMetadataColumn
                       refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Team_Assignment__c]"
                       dataType="wstr"
                       length="50"
@@ -4717,6 +4936,104 @@
                       dataType="wstr"
                       length="255"
                       name="Mailing_State_LMS__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[App_Hispanic_Latino__c]"
+                      dataType="bool"
+                      name="App_Hispanic_Latino__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[B2B_Partner__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="B2B_Partner__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Certification_Goal__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Certification_Goal__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Cohort_ID__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="Cohort_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Cost_of_Course__c]"
+                      dataType="numeric"
+                      name="Cost_of_Course__c"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Company_ID__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="DOZISF__ZoomInfo_Company_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Enrich_Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="DOZISF__ZoomInfo_Enrich_Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_First_Updated__c]"
+                      dataType="dbTimeStampOffset"
+                      name="DOZISF__ZoomInfo_First_Updated__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Id__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="DOZISF__ZoomInfo_Id__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_InboxAI_ID__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="DOZISF__ZoomInfo_InboxAI_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Last_Updated__c]"
+                      dataType="dbTimeStampOffset"
+                      name="DOZISF__ZoomInfo_Last_Updated__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[DOZISF__ZoomInfo_Non_Matched_Reason__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="DOZISF__ZoomInfo_Non_Matched_Reason__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Enrolled_Course_Name__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Enrolled_Course_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Date_Clicked__c]"
+                      dataType="dbDate"
+                      name="Last_Date_Clicked__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Date_Opened__c]"
+                      dataType="dbDate"
+                      name="Last_Date_Opened__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Date_Sent__c]"
+                      dataType="dbDate"
+                      name="Last_Date_Sent__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Last_Send_Date__c]"
+                      dataType="dbDate"
+                      name="Last_Send_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[MC_Phone__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="MC_Phone__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[National_Certifications__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="National_Certifications__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Primary_Industry__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Primary_Industry__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].ExternalColumns[Sub_Industry__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sub_Industry__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -4883,6 +5200,90 @@
                       cachedName="Phone"
                       externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
                       lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[NHA_registered_email__c]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="NHA_registered_email__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[NHA_Registered_email__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[NHA_registered_email__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Academic_Status__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Academic_Status__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Academic_Status__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Academic_Status__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Enrolled_Program__c]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Enrolled_Program__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Enrolled_Program__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Enrolled_Program__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Start_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Start_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Start_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Start_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Program_Completion_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Program_Completion_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Program_Completion_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Program_Completion_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Cleared_for_National_Exam__c]"
+                      cachedDataType="bool"
+                      cachedName="Cleared_for_National_Exam__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Cleared_for_National_Exam__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Cleared_for_National_Exam__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Certification_1_Final_Result__c]"
+                      cachedDataType="wstr"
+                      cachedLength="1300"
+                      cachedName="Certification_1_Final_Result__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Certification_1_Final_Result__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Certification_1_Final_Result__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Last_LMS_Login_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Last_LMS_Login_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Last_LMS_Login_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_LMS_Login_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[LastActivityDate]"
+                      cachedDataType="dbDate"
+                      cachedName="LastActivityDate"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[LastActivityDate]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[LastActivityDate]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[End_Date__c]"
+                      cachedDataType="dbDate"
+                      cachedName="End_Date__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[End_Date__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[End_Date__c]" />
+                    <inputColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].Columns[Last_Activity_Completion__c]"
+                      cachedDataType="dbDate"
+                      cachedName="Last_Activity_Completion__c"
+                      externalMetadataColumnId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Last_Activity_Completion__c]"
+                      lineageId="Package\from Salesforce to SQL\Contact.Outputs[Salesforce Source Output].Columns[Last_Activity_Completion__c]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4956,6 +5357,65 @@
                       dataType="wstr"
                       length="100"
                       name="NHA_Registered_email__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Academic_Status__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Academic_Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="40"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="80"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Enrolled_Program__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="Enrolled_Program__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Start_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Start_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Program_Completion_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Program_Completion_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Cleared_for_National_Exam__c]"
+                      dataType="bool"
+                      name="Cleared_for_National_Exam__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Certification_1_Final_Result__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Certification_1_Final_Result__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Last_LMS_Login_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Last_LMS_Login_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[LastActivityDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastActivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[End_Date__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="End_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\from Salesforce to SQL\sf_Contact.Inputs[OLE DB Destination Input].ExternalColumns[Last_Activity_Completion__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="Last_Activity_Completion__c" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5086,13 +5546,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="117,42"
-          Id="Package\from Salesforce to SQL\Contact"
-          TopLeft="316,205" />
-        <NodeLayout
           Size="132,42"
           Id="Package\from Salesforce to SQL\sf_Contact"
           TopLeft="473,337" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\from Salesforce to SQL\Contact"
+          TopLeft="316,205" />
         <EdgeLayout
           Id="Package\from Salesforce to SQL.Paths[Salesforce Source Output]"
           TopLeft="374.5,247">

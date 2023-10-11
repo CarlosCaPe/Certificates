@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_PracticeExam"
   DTS:PackageType="5"
-  DTS:VersionBuild="101"
-  DTS:VersionGUID="{C741D3C4-EFD3-4994-A39E-D3A0AE42C5A8}">
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{63325F31-A79E-4E10-9DF2-E42D2A51CC8A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -470,8 +470,8 @@
               <connections>
                 <connection
                   refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Destination.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
+                  connectionManagerRefId="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -626,8 +626,8 @@
               <connections>
                 <connection
                   refId="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Source.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
+                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
+                  connectionManagerRefId="{48E88658-5C14-4715-93A1-A16937345712}:invalid"
                   description="Salesforce Connection"
                   name="Salesforce" />
               </connections>
@@ -1045,7 +1045,7 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\Practice Exam.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
@@ -1656,7 +1656,7 @@
     design-time-name="Package\delete from Salesforce sf_PracticeExam__c">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="189,42"
           Id="Package\delete from Salesforce sf_PracticeExam__c\Salesforce Destination"
@@ -1696,7 +1696,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1708,13 +1710,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197,42"
-          Id="Package\from Salesforce to SQL\sf_PracticeExam__c"
-          TopLeft="473,337" />
-        <NodeLayout
           Size="150,42"
           Id="Package\from Salesforce to SQL\Practice Exam"
           TopLeft="316,205" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\from Salesforce to SQL\sf_PracticeExam__c"
+          TopLeft="473,337" />
         <NodeLayout
           Size="176,42"
           Id="Package\from Salesforce to SQL\Data Conversion"

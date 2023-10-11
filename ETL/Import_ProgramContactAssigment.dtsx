@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_ProgramContactAssigment"
   DTS:PackageType="5"
-  DTS:VersionBuild="127"
-  DTS:VersionGUID="{5AAE1FA0-7251-49F8-8B12-6D263D3B7FD7}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{50A37886-A54C-409F-B43B-E58C81B67621}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -879,7 +879,7 @@
               <connections>
                 <connection
                   refId="Package\from Salesforce to SQL\ProgramContactAssigment.Connections[Salesforce]"
-                  connectionManagerID="{48E88658-5C14-4715-93A1-A16937345712}:external"
+                  connectionManagerID="{8E1BED2E-7340-4F27-8124-48F8021E61DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Salesforce Connection Manager]"
                   description="Salesforce Connection"
                   name="Salesforce" />
