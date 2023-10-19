@@ -8,9 +8,9 @@
       ConnectionString="InstanceType=Production;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;RedirectUri=;UserName=ccaccarrillo-contractor@medcerts.comrrillo-contractor@medcerts.com;ServiceTimeout=30;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=False"
       ConnectByProxy="False">
       <Password
-        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsfMQpdF8XUOpbwB0ZvRR2AAAAAACAAAAAAADZgAAwAAAABAAAACbgBlqXbv3zPTz82DturTnAAAAAASAAACgAAAAEAAAAAWx/g+6liS88Kmy8Qml0gBYAAAABVvU5iA2XZTJj929oimrntY8GmacZAmqtOwMFq6pgIbVwOfRwonKGo9m+WJN2IalRi0p10clEuCea6cu2phDUNqpGNbQ58fVevmin5XqiTrjO1+IYvjioRQAAAAEM2Jz7nwbOfoaPjNx2e5Wax4sHw==</Password>
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2klB60Co7Um3TcLqzrMbgAAAAAACAAAAAAADZgAAwAAAABAAAABeqWvA7y1rI3svAwRzXsarAAAAAASAAACgAAAAEAAAADVschiXkYUK4uDtoZFvxBdYAAAA2/9Etcm4t8A28rOkoOgnbZkyfOeyrWrNiycqM2gnB/WP0i28AWgvRhW7aMipr4Bvc/JQ1F3OhIs6a4Yru/ie8blA24LxXVzS3Fd0Z3Q1XkiEszEJq2KfXBQAAAATXIsca1/JQJAfnfO1NtUvDQYT1Q==</Password>
       <SecurityToken
-        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsfMQpdF8XUOpbwB0ZvRR2AAAAAACAAAAAAADZgAAwAAAABAAAADMhWiOCUBW6RHMtKCGVfnnAAAAAASAAACgAAAAEAAAAL091O3JnH03BWURIV37mPpwAAAAJo4u9569Q1Nbgv9JwM7MTB0BLHX38rszocYS4VGqdv5F+JhHbbVHErCvNrQgX0KaB2qb+BnMBzYXXHxFJ5AV2Rm7pyLoCT5wDWJ7DFF3JyflzkmMQppKgjNnvEOBWy4J0JvyT846P+Sp/0eDDOq8hRQAAACPoJrDR3sD3rTaEGlLeCy9wEREAQ==</SecurityToken>
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2klB60Co7Um3TcLqzrMbgAAAAAACAAAAAAADZgAAwAAAABAAAABjCIKzD9U7qmjWgUI9bZDyAAAAAASAAACgAAAAEAAAACiHsMjzVgP4+5NTB+GM4BRwAAAALR4Fj39bnHBZhyRlhVWh7cfUGwa0lwgFGQIYtBoAL8oKcZq/dJYwZV/O7OghVFgABMbVEasayJ4HwNrVUyjzxMJw1r7HcdemOEsiiGQffvWW0xKXtXqlnK+tDGwPH9AcZR520BVmX9Gv605Ot2g8UBQAAADgja8PdOm/O/3pG7A3482944hyVA==</SecurityToken>
     </SalesforceConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
